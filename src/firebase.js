@@ -1,10 +1,10 @@
-import firebase from 'firebase/app'
-iport 'firebase/database';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 var firebaseConfig = {
-    apiKey: process.env.REACT_APP_TOUR_API_KEY,
+    apiKey: 'AIzaSyBpra6RB-YLwxGjJ2nyd4zF_7rbo8Lvdnk',
     authDomain: "object-formatter.firebaseapp.com",
-    databaseURL: "https://object-formatter-default-rtdb.firebaseio.com",
+    databaseURL: "https://object-formatter-default-rtdb.firebaseio.com/",
     projectId: "object-formatter",
     storageBucket: "object-formatter.appspot.com",
     messagingSenderId: "386246273440",
@@ -14,7 +14,3 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export default firebase;
-
-
-
-console.log(process.env.REACT_APP_TOUR_API_KEY);
