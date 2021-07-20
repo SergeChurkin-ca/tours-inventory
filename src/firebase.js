@@ -1,16 +1,19 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
+import firebase from "firebase/app";
+import "firebase/database";
 
-var firebaseConfig = {
-    apiKey: 'AIzaSyBpra6RB-YLwxGjJ2nyd4zF_7rbo8Lvdnk',
-    authDomain: "object-formatter.firebaseapp.com",
-    databaseURL: "https://object-formatter-default-rtdb.firebaseio.com/",
-    projectId: "object-formatter",
-    storageBucket: "object-formatter.appspot.com",
-    messagingSenderId: "386246273440",
-    appId: "1:386246273440:web:36b3ef47c13f794dfbdcc5",
-    measurementId: "G-PEM1T4G8VE"
+// Your web app's Firebase configuration
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAvmOCITwc2n7AfUZxmsvSg3Oh9vxiB6BM",
+    authDomain: "tours-inventory.firebaseapp.com",
+    databaseURL: "https://tours-inventory.firebaseio.com",
+    projectId: "tours-inventory",
+    storageBucket: "tours-inventory.appspot.com",
+    messagingSenderId: "227516769907",
+    appId: "1:227516769907:web:63ecc0d66b794542512c06",
 };
-
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 export default firebase;

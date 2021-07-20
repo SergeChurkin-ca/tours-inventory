@@ -1,13 +1,5 @@
 import React from 'react'
-
-// export default function ManageInventory() {
-//     return (
-//         <div>
-//             <h2>Here we will manage inventory</h2>
-//         </div>
-//     )
-// }
-
+import ManageTable from './ManageTable';
 
 class ManageInventory extends React.Component {
     constructor(props) {
@@ -22,7 +14,7 @@ class ManageInventory extends React.Component {
     authorize(e) {
         const password = e.target.querySelector(
             'input[type="password"]').value;
-            const auth = password == this.state.password;
+            const auth = password === this.state.password;
             this.setState({
                 authorized: auth
             });
@@ -31,21 +23,25 @@ class ManageInventory extends React.Component {
 
     render() {
         const login = (
-            <form action="#" onSubmit={this.authorize}>
+            <form action="#" onSubmit={this.authorize} >
             <input type="password" placeholder="Password" />
-            <input type="submit" />
+            <input type="submit" value="login"/>
             </form>
         )
         const tourManagerTable = (
-            <h2>Hello from tour manager tabel - it is here</h2>
+            <ManageTable />
         );
 
         return (
             <div id="authorization">
+                
                 <h3>
+                    
                     {this.state.authorized ? ManageInventory : 'Please authorize to manage inventory'}
                 </h3>
-                    {this.state.authorized? tourManagerTable : login}
+                    {this.state.authorized? tourManagerTable  : login}
+                   
+                    
             </div>
         )
     }

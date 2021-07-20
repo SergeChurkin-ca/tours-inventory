@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, {Component} from 'react'
 import firebase from '../firebase'
 
@@ -9,8 +10,7 @@ export default class Tourlists extends Component {
         }
     }
   
-
-
+   
     componentDidMount(){
         
         const dbRef = firebase.database().ref();
@@ -20,28 +20,38 @@ export default class Tourlists extends Component {
             const newToursArray = [];
             
             for (let inventoryName in data) {
-                const toursObjects = {
-                    // id: inventoryName,
-                    // name: data[inventoryName]
-                    name: data[inventoryName].Tourlist.atv
-                    
+                const toursObject = {
+                    id: inventoryName,
+                    name: data[inventoryName].name
                 }
-                newToursArray.push(toursObjects)
-           
+                newToursArray.push(toursObject)
             }
             this.setState({
                 tours: newToursArray,
             });
         })
     }
-    
+     handleChange = (e) => {
+        e.preventDefault()
+        console.log(e.target.value)
+
+        
+            return (
+                <div>{e.target.value}</div>
+            )
+        
+    }
+
     render() {
-      
-    return (
-        <div>
-          {this.state.tours.name}
-        </div>
-    )
+              return(
+                <div>
+                 <select id='tour-names' onChange={this.handleChange}>
+                   {this.state.tours.map((toursObject => {
+                        return <option value={toursObject.name} key={toursObject.id}>{toursObject.name}</option>
+                   }))}
+                 </select>
+                </div>
+          )
     }
 }
 
