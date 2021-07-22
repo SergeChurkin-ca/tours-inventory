@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import { render } from 'react-dom';
 import firebase from '../firebase'
+import Categories from './Categories'
 
 const TourMenu = () => {
 const [tours, setTours] = useState([])
 
 
-  
+
     useEffect(() => {
         const dbRef = firebase.database().ref();
        
@@ -28,17 +29,17 @@ const [tours, setTours] = useState([])
         })
     }, []);
 
-
+    const filterItems = (seats) => {
+        const newItems = tours.filter((item) => item.seats === seats)
+        setTours(newItems)
+    }
 
     return (
         <div>
             <h1>Hello from tour menu</h1>
-            {console.log('check if data is accessible', tours)}
-            {console.log("test 2", Object.entries(tours))}
 
-          {console.log(tours)}
+          <Categories filterItems={filterItems}/>
 
-       {/* {Object.entries(tours)} */}
             {tours.map((x)=>{
                 return (
                     <div style={{border: 'solid 1px', bordercolor: 'grey', width: '230px', margin: '10px auto'}}>
@@ -49,6 +50,8 @@ const [tours, setTours] = useState([])
                 )
                 })}
       
+                
+
         </div>
     )
 }
