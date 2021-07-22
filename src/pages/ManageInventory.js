@@ -36,7 +36,6 @@ class ManageInventory extends React.Component {
             <div id="authorization">
                 
                 <h3>
-                    
                     {this.state.authorized ? ManageInventory : 'Please authorize to manage inventory'}
                 </h3>
                     {this.state.authorized? tourManagerTable  : login}
