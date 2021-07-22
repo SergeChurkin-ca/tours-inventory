@@ -29,8 +29,8 @@ const [tours, setTours] = useState([])
         })
     }, []);
 
-    const filterItems = (seats) => {
-        const newItems = tours.filter((item) => item.seats === seats)
+    const filterItems = (filterParam) => {
+        const newItems = tours.filter((item) => item.date === filterParam)
         setTours(newItems)
     }
 
@@ -39,8 +39,10 @@ const [tours, setTours] = useState([])
             <h1>Hello from tour menu</h1>
 
           <Categories filterItems={filterItems}/>
-
-            {tours.map((x)=>{
+            
+            {tours
+            .sort((a,b) => a.date > b.date)
+            .map((x)=>{
                 return (
                     <div style={{border: 'solid 1px', bordercolor: 'grey', width: '230px', margin: '10px auto'}}>
                       <p>{x.name}</p>
