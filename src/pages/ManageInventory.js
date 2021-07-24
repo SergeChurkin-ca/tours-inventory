@@ -1,49 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ManageTable from './ManageTable';
 
-class ManageInventory extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            password: 'admin',
-            authorize: false
-        };
-        this.authorize = this.authorize.bind(this);
+const ManageInventory = () => {
+   
+    const  password = 'admin'
+    const [authorize, setAuthorize] = useState(false)
+
+
+    const authorization = (e) => {
+        e.preventDefault()
+        const passEntry = e.target.querySelector('input[type="password"]').value;
+        return password !== passEntry ? alert('wrong password'): 
+        password === passEntry ? setAuthorize(true) : setAuthorize(false) 
+
     }
 
-    authorize(e) {
-        const password = e.target.querySelector(
-            'input[type="password"]').value;
-            const auth = password === this.state.password;
-            this.setState({
-                authorized: auth
-            });
-        
-    }
-
-    render() {
         const login = (
-            <form action="#" onSubmit={this.authorize} >
+            <>
+            <h2>please login to proceed</h2>
+            <form action="#" onSubmit={authorization}>
             <input type="password" placeholder="Password" />
             <input type="submit" value="login"/>
             </form>
+            </>
         )
-        const tourManagerTable = (
-            <ManageTable />
-        );
 
         return (
-            <div id="authorization">
-                
+            <div>
                 <h3>
-                    {this.state.authorized ? ManageInventory : 'Please authorize to manage inventory'}
+                    {authorize || login}
+                    {authorize && <ManageTable />}
                 </h3>
-                    {this.state.authorized? tourManagerTable  : login}
-                   
-                    
+                
             </div>
         )
-    }
   
 }
 

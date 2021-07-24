@@ -32,6 +32,7 @@ const [tours, setTours] = useState([])
     const filterItems = (filterParam) => {
         const newItems = tours.filter((item) => item.date === filterParam)
         setTours(newItems)
+         
     }
 
     return (
@@ -51,9 +52,7 @@ const [tours, setTours] = useState([])
                     </div>
                 )
                 })}
-      
-                
-
+                <h2>{tours.length === 0 && 'hold on ...'}</h2>
         </div>
     )
 }
