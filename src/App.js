@@ -4,7 +4,7 @@ import './App.css';
 
 import Error from './pages/Error';
 import Home from './pages/Home';
-import Tourlist from './pages/Tourlist'
+import TourMenu from './pages/TourMenu'
 import Booking from './pages/Booking';
 import ManageInventory from './pages/ManageInventory';
 
@@ -19,7 +19,7 @@ function App() {
     <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exat path="/tourlist" component={Tourlist}/>
+        <Route exat path="/tourmenu" component={TourMenu}/>
         <Route exact path="/booking" component={Booking} />
         <Route exact path="/manageinventory" component={ManageInventory}/>
         <Route component={Error} />

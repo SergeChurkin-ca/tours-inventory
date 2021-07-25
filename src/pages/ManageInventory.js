@@ -6,7 +6,6 @@ const ManageInventory = () => {
     const  password = 'admin'
     const [authorize, setAuthorize] = useState(false)
 
-
     const authorization = (e) => {
         e.preventDefault()
         const passEntry = e.target.querySelector('input[type="password"]').value;

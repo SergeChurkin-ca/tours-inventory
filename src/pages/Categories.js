@@ -12,6 +12,7 @@ function Categories({filterItems}) {
                  <form >
                      <input type="date" onChange={(e) => filterItems(e.target.value)}/>
                  </form>
+                 
             </div>
         </div>
     )
