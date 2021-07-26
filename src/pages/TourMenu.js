@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { render } from 'react-dom';
 import firebase from '../firebase'
 import Categories from './Categories'
 
@@ -17,8 +18,9 @@ const [tours, setTours] = useState([])
                 const toursObject = {
                     id: inventoryName,
                     name: data[inventoryName].name,
+                    category: data[inventoryName].category,
                     seats: data[inventoryName].seats,
-                    date: data[inventoryName].date
+                    date: data[inventoryName].date,
                 }
                 newToursArray.push(toursObject)
             }
@@ -33,11 +35,16 @@ const [tours, setTours] = useState([])
          
     }
 
+    const filterItemsCat = (filterParam) => {
+        const newItems = tours.filter((item) => item.category === filterParam)
+        setTours(newItems)
+    }
+
     return (
         <div>
             <h1>Hello from tour menu</h1>
 
-          <Categories filterItems={filterItems}/>
+          <Categories filterItems={filterItems} filterItemsCat={filterItemsCat}/>
             
             {tours
             .sort((a,b) => a.date > b.date)
