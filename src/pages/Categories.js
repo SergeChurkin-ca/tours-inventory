@@ -1,17 +1,15 @@
 import React from "react";
 
 function Categories({ categories, filterItemsCat, filterItemsDate }) {
-  // const getInputValue = (e) => {
-  //     const userVal = e.target.value;
-  //     console.log(userVal)
-  // }
+  const current = new Date();
+
   return (
     <div className="categories-container wrapper">
       <div className="btn-container">
                 you can filter tours here
                  <form >
                     <label>by date</label>
-                    <input type="date" onChange={(e) => filterItemsDate(e.target.value)} />
+          <input type="date" onChange={(e) => filterItemsDate(e.target.value)} defaultValue={`${current.getFullYear()}-${current.getMonth()}-${current.getDate()}`}/>
                  </form>
             </div>
 
@@ -21,16 +19,11 @@ function Categories({ categories, filterItemsCat, filterItemsDate }) {
           <option value="all">--CHOOSE ALL--</option>
           <option value="land">land</option>
           <option value="water">water</option>
-          <option value="coulinary">coulinary</option>
+          <option value="culinary">coulinary</option>
+          <option value="air">air</option>
+          <option value="historical">historical</option>
         </select>
-        {/* <select onChange={() => filterItemsCat(categories)}>
-                    <option value="">--selest--</option>
-                    {categories.map((category, index) => {
-                        return (
-                            <option key={index} value="">{category}</option>
-                        )
-                    })}
-                </select> */}
+     
       </div>
     </div>
   );

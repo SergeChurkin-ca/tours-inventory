@@ -43,16 +43,15 @@ const NewTourForm = () => {
           maxLength="20"
           // required
         />
-        <input
-          type="text"
-          className="noteInput"
-          placeholder="tour type, e.g land/water/sky/city"
-          name="tourCategory"
-          value={tourCategory}
-          onChange={(e) => setTourCategory(e.target.value)}
-          maxLength="20"
-          // required
-        />
+        <label for="categories">Choose tour type</label>
+        <select onChange={(e) => setTourCategory(e.target.value)}>
+          <option value="">-- tour type --</option>
+          <option value="land">land</option>
+          <option value="water">water</option>
+          <option value="culinary">culinary</option>
+          <option value="historical">historical</option>
+          <option value="air">air</option>
+        </select>
         <div className="inputParamsWrapper">
           <input
             type="date"

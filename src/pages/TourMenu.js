@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import firebase from "../firebase";
 import Categories from "./Categories";
 import TourItems from "./TourItems";
-// const allCategories = [1, 2, 3]
 
 const TourMenu = () => {
   const [tours, setTours] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const filterItemsCat = (category) => {
+  const filterItemsCat = (category, filterParam) => {
     if (category && category !== "all") {
       setTours(categories.filter((x) => x.category === category));
     } else {
@@ -17,8 +16,8 @@ const TourMenu = () => {
   };
 
   const filterItemsDate = (filterParam) => {
-    return setTours(categories.filter((item) => item.date === filterParam))
-  }
+    setTours(categories.filter((item) => item.date === filterParam));
+  };
 
   useEffect(() => {
     const dbRef = firebase.database().ref();
@@ -43,15 +42,21 @@ const TourMenu = () => {
   }, []);
 
   return (
-
     <div>
-      <h1>Hello from tour menu</h1>
-
-      <Categories categories={categories} filterItemsCat={filterItemsCat} filterItemsDate={filterItemsDate} />
+      <h1>Hello from tour menu </h1>
+      
+      <Categories
+        categories={categories}
+        filterItemsCat={filterItemsCat}
+        filterItemsDate={filterItemsDate}
+      />
 
       <TourItems filterredTours={tours} />
 
-      <h2>{tours.length === 0 && "please try another selection ... nothing found..."}</h2>
+      <h2>
+        {tours.length === 0 &&
+          "please hold on... "}
+      </h2>
     </div>
   );
 };
