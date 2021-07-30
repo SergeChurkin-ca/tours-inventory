@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import firebase from "../firebase";
-import Categories from "./Categories";
-import TourItems from "./TourItems";
+import Categories from "../components/CategoriesDropdown";
+import TourItems from "../components/TourItems";
 
 const TourMenu = () => {
   const [tours, setTours] = useState([]);

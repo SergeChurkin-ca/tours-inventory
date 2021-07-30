@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import ManageTable from './ManageTable';
+import ManageTable from '../components/ManageTable';
 
 const ManageInventory = () => {
    
@@ -37,3 +37,5 @@ const ManageInventory = () => {
 }
 
 export default ManageInventory;
+
+// has to rename into auth from anageinventory

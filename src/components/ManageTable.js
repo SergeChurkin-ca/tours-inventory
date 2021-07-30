@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebase  from "firebase";
 import NewTourForm from "./NewTourForm.js";
-import TourMenu from "./TourMenu.js";
+import TourMenu from "../pages/TourMenu.js";
 
 
 
@@ -36,9 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className="tour-booking-list">
-        
         <NewTourForm addTour={this.addTour} />
         <TourMenu />
+        <h1>check component</h1>
       </div>
     );
   }
