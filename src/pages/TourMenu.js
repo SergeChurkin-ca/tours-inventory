@@ -1,10 +1,24 @@
 import React, { useEffect, useState } from "react";
 import firebase from "../firebase";
 import Categories from "./Categories";
-const allCategories = [1,2,3]
+import TourItems from "./TourItems";
+// const allCategories = [1, 2, 3]
+
 const TourMenu = () => {
   const [tours, setTours] = useState([]);
-  const [categories, setCategories] = useState(allCategories)
+  const [categories, setCategories] = useState([]);
+
+  const filterItemsCat = (category) => {
+    if (category && category !== "all") {
+      setTours(categories.filter((x) => x.category === category));
+    } else {
+      setTours(categories);
+    }
+  };
+
+  const filterItemsDate = (filterParam) => {
+    return setTours(categories.filter((item) => item.date === filterParam))
+  }
 
   useEffect(() => {
     const dbRef = firebase.database().ref();
@@ -24,59 +38,20 @@ const TourMenu = () => {
         newToursArray.push(toursObject);
       }
       setTours(newToursArray);
+      setCategories(newToursArray);
     });
   }, []);
 
-  // const filterItems = (filterParam) => {
-  //     const newItems = tours.filter((item) => item.date === filterParam)
-  //     setTours(newItems)
-
-  // }
-
-  // const filterItemsCat = (category) => {
-  //   if (category === "all") {
-  //     setTours(tours);
-  //     return;
-  //   }
-  //   const newItems = tours.filter((item) => item.category === category);
-  //   setTours(newItems);
-  // };
-
-  const filterItemsCat = (category) => {
-    // return category === 'all' ? console.log('all', category) : console.log('something', category)
-    return category === "all"
-      ? setTours(tours)
-      : setTours(tours.filter((x) => x.category === category));
-  };
-
   return (
+
     <div>
       <h1>Hello from tour menu</h1>
 
-      <Categories categories={categories} filterItemsCat={filterItemsCat} />
+      <Categories categories={categories} filterItemsCat={filterItemsCat} filterItemsDate={filterItemsDate} />
 
-      {tours
-        .sort((a, b) => a.date < b.date)
-        .map((x) => {
-          return (
-            <div
-              key={x.id}
-              style={{
-                border: "solid 1px",
-                bordercolor: "grey",
-                width: "230px",
-                margin: "10px auto",
-              }}
-            >
-              <p>{x.name}</p>
-              <p>{x.category}</p>
-              <p>date: {x.date}</p>
-              <p>seats: {x.seats}</p>
-            </div>
-          );
-        })}
+      <TourItems filterredTours={tours} />
 
-      <h2>{tours.length === 0 && "hold on ..."}</h2>
+      <h2>{tours.length === 0 && "please try another selection ... nothing found..."}</h2>
     </div>
   );
 };
