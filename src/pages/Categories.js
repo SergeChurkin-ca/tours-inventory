@@ -19,7 +19,7 @@ function Categories({ categories, filterItemsCat, filterItemsDate }) {
           <option value="all">--CHOOSE ALL--</option>
           <option value="land">land</option>
           <option value="water">water</option>
-          <option value="culinary">coulinary</option>
+          <option value="culinary">culinary</option>
           <option value="air">air</option>
           <option value="historical">historical</option>
         </select>

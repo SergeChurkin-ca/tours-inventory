@@ -21,7 +21,7 @@ const NewTourForm = () => {
       name: tourName,
       category: tourCategory,
       date: tourDate,
-      durattion: tourDuration,
+      duration: tourDuration,
       seats: tourSeats,
       description: tourDescription,
     });
