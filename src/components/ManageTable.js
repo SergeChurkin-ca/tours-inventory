@@ -13,7 +13,6 @@ class App extends Component {
       tours: [],
     };
   }
-
   
   addTour(e) {
     e.preventDefault();

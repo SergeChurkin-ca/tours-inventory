@@ -1,0 +1,14 @@
+$mainBlack: #201f1f;
+$mainGreen: #3d9970;
+$mainWhite: rgb(255, 248, 248);
+$mainGrey: #ccc5c5;
+$mainTransition: all 0.2s linear;
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: $mainWhite;
+    color: $mainGrey;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
