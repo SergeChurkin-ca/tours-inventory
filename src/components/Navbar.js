@@ -7,13 +7,14 @@ export default function Navbar() {
   return (
     <div>
       <nav className="navbar">
+        <i className="fa fa-bars">
+        </i>
+        <input type="checkbox" id="toggle" name="toggle" />
+        <div className="logo-wrapper">
+          <img src={logo} alt="tourbess logo" className="logo" />
+        </div>
+      
         <ul className="nav-links">
-          <li>
-            <img src={logo} alt="tourbess loso" className="logo" />
-          </li>
-          <li>
-            <img src="" alt="" />
-          </li>
           <li>
             <Link to="/">Home</Link>
           </li>

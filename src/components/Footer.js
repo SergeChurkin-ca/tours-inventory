@@ -48,7 +48,8 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p class="trademark ">2020 created by serge churkin www.serge-web.com</p>
+      <p class="trademark ">2020 created by serge churkin <a href="https://serge-web.com">    www.serge-web.com</a>
+    </p>
     </footer>
   );
 };

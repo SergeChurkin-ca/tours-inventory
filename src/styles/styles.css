@@ -264,11 +264,15 @@ html {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #fff8f8;
-  color: #ccc5c5;
+  background-color: #ccc5c5;
 }
 
 .wrapper {
+  margin: 0 auto;
+}
+
+main {
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -537,17 +541,39 @@ html {
 }
 
 .navbar {
-  background-color: #3d9970;
-  padding: 0.1rem;
+  background-color: #008037;
+  padding: 0.1rem 3rem;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.logo-wrapper {
+  justify-content: center;
+  padding: 1rem 0;
+  width: calc((70vw - 300px));
+}
+
+.logo {
+  height: 3em;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  margin: 0 auto;
+  justify-content: flex-end;
 }
 
 .nav-links li {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: baseline;
-  vertical-align: middle;
+  white-space: nowrap;
+  display: flex;
+}
+
+li a {
+  padding: 2rem;
 }
 
 .nav-links a {
@@ -559,16 +585,72 @@ html {
 
 .nav-links a:hover {
   color: black;
-}
-
-.logo {
-  height: 3em;
-  margin-right: 30vw;
+  background-color: white;
 }
 
 .navbar li {
   text-transform: uppercase;
   list-style-type: none;
+}
+
+@media (max-width: 700px) {
+  .logo-wrapper {
+    height: 4rem;
+    width: auto;
+  }
+  .navbar ul,
+  .logo {
+    margin: 0 auto;
+    padding: 0;
+  }
+  .navbar ul {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .nav-links li {
+    width: 100vw;
+    text-align: center;
+    margin: auto;
+    flex: 0;
+  }
+  .nav-links li {
+    flex-direction: column;
+  }
+  .nav-links li:hover a,
+  .nav-links li li {
+    background-color: white;
+    color: black;
+  }
+}
+
+.fa-bars {
+  visibility: hidden;
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  font-size: 25px;
+  z-index: 1;
+}
+
+#toggle {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  transform: scale(4);
+}
+
+@media (max-width: 700px) {
+  .fa-bars {
+    visibility: visible;
+  }
+  .nav-links li {
+    display: none;
+  }
+  #toggle:checked ~ .nav-links li {
+    display: inline-flex;
+  }
 }
 
 footer {
