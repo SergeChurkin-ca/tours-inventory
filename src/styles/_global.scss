@@ -6,13 +6,9 @@ $mainTransition: all 0.2s linear;
 body {
     font-family: "Open Sans", sans-serif;
     background-color: $mainGrey;
+    width: 100%;
 }
 
 .wrapper {
-    margin: 0 auto;
-}
-
-main {
-    width: 80vw;
     margin: 0 auto;
 }

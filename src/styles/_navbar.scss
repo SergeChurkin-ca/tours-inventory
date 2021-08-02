@@ -1,4 +1,3 @@
-@import "./index.scss";
 @import "setup";
 .navbar {
     background-color: $mainGreen;
@@ -12,7 +11,7 @@
 .logo-wrapper {
     justify-content: center;
     padding: 1rem 0;
-    width: calc((70vw - 300px))
+    width: calc((80vw - 30rem));
 }
 
 .logo {
@@ -89,7 +88,7 @@ li a {
     visibility: hidden;
     position: absolute;
     right: 1rem;
-    top: 2rem;
+    top: 1.5rem;
     font-size: 25px;
     z-index: 1;
 }

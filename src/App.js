@@ -11,7 +11,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/manageinventory" component={ManageInventory} />
         <Route component={Error} />
       </Switch>
-    </div>
+    </>
   );
 }
 

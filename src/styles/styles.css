@@ -1,543 +1,231 @@
-html {
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: .67em 0;
-}
-
-figcaption,
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
 figure,
-main {
-  display: block;
-}
-
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-dfn {
-  font-style: italic;
-}
-
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
-
-audio,
-video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-img {
-  border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-button,
-input {
-  overflow: visible;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
 
-button,
-select {
-  text-transform: none;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: .35em .75em .625em;
-}
-
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
+/* Make images easier to work with */
+img,
+picture {
   max-width: 100%;
-  padding: 0;
-  white-space: normal;
+  display: block;
 }
 
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-textarea {
-  overflow: auto;
-}
-
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-details,
-menu {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-canvas {
-  display: inline-block;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: '';
-  clear: both;
-  height: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #ccc5c5;
+  width: 100%;
 }
 
 .wrapper {
   margin: 0 auto;
 }
 
-main {
-  width: 80vw;
+.main {
+  background-image: url("../assets/pexels-rachel-claire-4992673.jpg");
+  background-size: cover;
+  height: 90vh;
+  z-index: 1;
+}
+
+.home {
+  overflow: hidden;
   margin: 0 auto;
 }
 
-html {
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
+header {
+  padding: 5rem;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-family: 'Hammersmith One', sans-serif;
 }
 
 h1 {
-  font-size: 2em;
-  margin: .67em 0;
+  font-size: calc(12px + 5vw);
+  font-weight: 800;
 }
 
-figcaption,
+h2 {
+  font-size: calc(10px + 1vw);
+}
+
+.line {
+  background-color: white;
+  height: 8px;
+  width: 40vw;
+  margin-bottom: 2rem;
+}
+
+.header-btn {
+  margin-top: 2rem;
+  padding: 0.5rem 7rem;
+  border: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.header-btn:hover,
+.header-btn:focus {
+  background-color: #008037;
+  color: white;
+  border: solid 2px #008037;
+}
+
+.header-btn:active {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 3px black;
+  text-shadow: 2px 2px 2px black;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.3rem;
+  }
+  .header-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
 figure,
-main {
-  display: block;
-}
-
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-}
-
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-
-b,
-strong {
-  font-weight: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-dfn {
-  font-style: italic;
-}
-
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
-
-audio,
-video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-img {
-  border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-button,
-input {
-  overflow: visible;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
 
-button,
-select {
-  text-transform: none;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: .35em .75em .625em;
-}
-
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
+/* Make images easier to work with */
+img,
+picture {
   max-width: 100%;
-  padding: 0;
-  white-space: normal;
+  display: block;
 }
 
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-textarea {
-  overflow: auto;
-}
-
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type=search] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-details,
-menu {
-  display: block;
-}
-
-summary {
-  display: list-item;
-}
-
-canvas {
-  display: inline-block;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
-}
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: '';
-  clear: both;
-  height: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .navbar {
@@ -552,7 +240,7 @@ html {
 .logo-wrapper {
   justify-content: center;
   padding: 1rem 0;
-  width: calc((70vw - 300px));
+  width: calc((80vw - 30rem));
 }
 
 .logo {
@@ -627,7 +315,7 @@ li a {
   visibility: hidden;
   position: absolute;
   right: 1rem;
-  top: 2rem;
+  top: 1.5rem;
   font-size: 25px;
   z-index: 1;
 }
@@ -657,10 +345,10 @@ footer {
   position: fixed;
   bottom: 0;
   background-color: #363636;
-  width: 100%;
+  width: 100vw;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  padding: 0.3rem;
+  font-size: 12px;
 }
 
 footer a {
@@ -680,4 +368,8 @@ footer li {
   margin-top: 1.5em;
   font-size: 0.5em;
   color: whitesmoke;
+}
+
+footer a:hover {
+  color: black;
 }

@@ -2,10 +2,10 @@ footer {
     position: fixed;
     bottom: 0;
     background-color: rgb(54, 54, 54);
-    width: 100%;
+    width: 100vw;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    padding: 0.3rem;
+    font-size: 12px;
 }
 
 footer a {
@@ -25,4 +25,8 @@ footer li {
     margin-top: 1.5em;
     font-size: 0.5em;
     color: whitesmoke;
+}
+
+footer a:hover {
+    color: black;
 }
