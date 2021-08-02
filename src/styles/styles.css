@@ -362,6 +362,39 @@ li a {
   font-size: 20px;
 }
 
+.categories-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 15rem;
+  box-shadow: 3px 3px 3px #e9dede;
+}
+
+.categories-container label,
+.categories-container span {
+  margin: 1rem 2rem;
+  text-transform: uppercase;
+}
+
+.calendar,
+.options-container {
+  background-color: #008037;
+  color: #fff8f8;
+  border-radius: 8px;
+  display: flex;
+  align-content: center;
+}
+
+.options-container select {
+  margin: 0 auto;
+}
+
+option {
+  background-color: #e9dede;
+  color: #008037;
+  font-weight: 700;
+}
+
 .tour-output-list {
   margin: 5em auto;
   display: flex;
@@ -398,7 +431,11 @@ h3 {
 
 .img-container {
   background: url("../images/spinner.gif") no-repeat center;
+  padding: 0 auto;
+  width: 25rem;
+  height: 25rem;
   object-fit: contain;
+  position: relative;
   display: flex;
   margin: 0 auto;
   text-align: center;
@@ -428,8 +465,12 @@ h3 {
 }
 
 @media (max-width: 780px) {
-  .tour-output-list {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .tour-output-list .tour-item {
+    flex: 0 1 200px;
+  }
+  .tour-output-list .img-container {
+    width: 15rem;
+    height: 15rem;
   }
 }
 
@@ -440,10 +481,10 @@ h3 {
     margin: 0 auto;
     width: 100%;
     position: relative;
+    align-content: center;
   }
   h3 {
     position: relative;
-    left: -10%;
     margin: 0;
     padding: 0;
   }

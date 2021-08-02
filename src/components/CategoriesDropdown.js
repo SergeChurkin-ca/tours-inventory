@@ -6,14 +6,18 @@ function Categories({ categories, filterItemsCat, filterItemsDate }) {
   return (
     <div className="categories-container wrapper">
       <div className="btn-container">
-                you can filter tours here
-                 <form >
-                    <label>by date</label>
-          <input type="date" onChange={(e) => filterItemsDate(e.target.value)} defaultValue={`${current.getFullYear()}-${current.getMonth()}-${current.getDate()}`}/>
-                 </form>
-            </div>
+        <form className="calendar">
+          <label>select tour date</label>
+          <input
+            type="date"
+            onChange={(e) => filterItemsDate(e.target.value)}
+            defaultValue={`${current.getFullYear()}-${current.getMonth()}-${current.getDate()}`}
+          />
+        </form>
+      </div>
 
-      <div className="btn-container">
+      <div className="options-container">
+        <span>select tour category</span>
         <select onChange={(e) => filterItemsCat(e.target.value)}>
           <option value="">--Please choose category--</option>
           <option value="all">--CHOOSE ALL--</option>
@@ -23,7 +27,6 @@ function Categories({ categories, filterItemsCat, filterItemsDate }) {
           <option value="air">air</option>
           <option value="historical">historical</option>
         </select>
-     
       </div>
     </div>
   );

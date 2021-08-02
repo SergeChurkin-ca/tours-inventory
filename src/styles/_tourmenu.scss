@@ -1,11 +1,9 @@
 .tour-output-list {
-    // max-width: 1170px;
     margin: 5em auto;
     display: flex;
     flex-wrap: wrap;
     margin: 1rem auto;
     padding: 1rem;
-    // align-content: space-between;
     justify-content: center;
     border: sold 3px red;
     text-transform: uppercase;
@@ -36,17 +34,18 @@ h3 {
 
 .img-container {
     background: url('../images/spinner.gif') no-repeat center;
+    padding: 0 auto;
+    width: 25rem;
+    height: 25rem;
     object-fit: contain;
-    // width: 50%;
+    position: relative;
     display: flex;
     margin: 0 auto;
     text-align: center;
-    // border: solid 3px red;
 }
 
 .tour-img {
     width: 100%;
-    // opacity: 0;
 }
 
 .tour-description {
@@ -70,7 +69,13 @@ h3 {
 
 @media (max-width: 780px) {
     .tour-output-list {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .tour-item {
+            flex: 0 1 200px;
+        }
+        .img-container {
+            width: 15rem;
+            height: 15rem;
+        }
     }
 }
 
@@ -81,10 +86,10 @@ h3 {
         margin: 0 auto;
         width: 100%;
         position: relative;
+        align-content: center;
     }
     h3 {
         position: relative;
-        left: -10%;
         margin: 0;
         padding: 0;
     }

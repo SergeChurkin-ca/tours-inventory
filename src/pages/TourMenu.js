@@ -3,11 +3,12 @@ import Loading from "../components/Loading";
 import firebase from "../firebase";
 import Categories from "../components/CategoriesDropdown";
 import TourItems from "../components/TourItems";
+import Footer from "../components/Footer";
 
 const TourMenu = () => {
   const [tours, setTours] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const filterItemsCat = (category, filterParam) => {
     if (category && category !== "all") {
@@ -22,7 +23,7 @@ const TourMenu = () => {
   };
 
   const fetchTours = async () => {
-    setLoading(true)
+    setLoading(true);
     const dbRef = firebase.database().ref();
 
     dbRef.on("value", (snapshot) => {
@@ -37,44 +38,45 @@ const TourMenu = () => {
           seats: data[inventoryName].seats,
           date: data[inventoryName].date,
           description: data[inventoryName].description,
-          imgUrl: "https://source.unsplash.com/350x350/?" + data[inventoryName].name,
+          imgUrl:
+            "https://source.unsplash.com/350x350/?" + data[inventoryName].name,
         };
         newToursArray.push(toursObject);
-        setLoading(false)
+        setLoading(false);
       }
       setTours(newToursArray);
       setCategories(newToursArray);
     });
   };
 
- useEffect(() => {
-    fetchTours()
-  }, [])
+  useEffect(() => {
+    fetchTours();
+  }, []);
 
-     if(loading) {
-     return (
-     <main>
-      <Loading />
-     </main>
-     )
-     }
-  
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+
   return (
-    <div className="wrapper">
-     
+    <>
+      <div className="wrapper">
+        <Categories
+          categories={categories}
+          filterItemsCat={filterItemsCat}
+          filterItemsDate={filterItemsDate}
+        />
+        <div className="tour-output-list">
+          <TourItems filterredTours={tours} />
+        </div>
 
-      <Categories
-        categories={categories}
-        filterItemsCat={filterItemsCat}
-        filterItemsDate={filterItemsDate}
-      />
-    <div className="tour-output-list">
-      
-        <TourItems filterredTours={tours} />
-    </div>
-
-      <h2>{tours.length === 0 && "please hold on... "}</h2>
-    </div>
+        <h2>{tours.length === 0 && "please hold on... nothing found for this day "}</h2>
+      </div>
+      <Footer />
+    </>
   );
 };
 

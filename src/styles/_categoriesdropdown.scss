@@ -1,0 +1,32 @@
+.categories-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 15rem;
+    box-shadow: 3px 3px 3px $mainGrey;
+}
+
+.categories-container label,
+.categories-container span {
+    margin: 1rem 2rem;
+    text-transform: uppercase;
+}
+
+.calendar,
+.options-container {
+    background-color: $mainGreen;
+    color: $mainWhite;
+    border-radius: 8px;
+    display: flex;
+    align-content: center;
+}
+
+.options-container select {
+    margin: 0 auto;
+}
+
+option {
+    background-color: $mainGrey;
+    color: $mainGreen;
+    font-weight: 700;
+}
