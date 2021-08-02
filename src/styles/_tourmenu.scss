@@ -1,0 +1,97 @@
+.tour-output-list {
+    // max-width: 1170px;
+    margin: 5em auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    padding: 1rem;
+    // align-content: space-between;
+    justify-content: center;
+    border: sold 3px red;
+    text-transform: uppercase;
+}
+
+.tour-item {
+    border: solid 2px grey;
+    margin: 1rem;
+    flex: 0 1 400px;
+    position: relative;
+}
+
+.tour-item p {
+    padding: 1rem;
+}
+
+h3 {
+    text-transform: uppercase;
+    border-bottom: solid 2px grey;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: $mainGreen;
+    color: rgb(65, 43, 4);
+    position: relative;
+    line-height: 4rem;
+}
+
+.img-container {
+    background: url('../images/spinner.gif') no-repeat center;
+    object-fit: contain;
+    // width: 50%;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    // border: solid 3px red;
+}
+
+.tour-img {
+    width: 100%;
+    // opacity: 0;
+}
+
+.tour-description {
+    z-index: -1;
+    background-color: $mainWhite;
+    position: absolute;
+    top: 14.6rem;
+    width: 100%;
+    height: calc(100% - 14.6rem);
+    opacity: 0;
+    text-transform: none;
+}
+
+.tour-item:hover .tour-description {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    transition: ease-in 0.3s;
+    opacity: 0.7;
+}
+
+@media (max-width: 780px) {
+    .tour-output-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 350px) {
+    .tour-output-list {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+    }
+    h3 {
+        position: relative;
+        left: -10%;
+        margin: 0;
+        padding: 0;
+    }
+    .header-tour {
+        padding: 1em 0;
+    }
+    h5 {
+        top: -0.5em;
+    }
+}

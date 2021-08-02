@@ -16,7 +16,7 @@
 header {
     padding: 5rem;
     text-transform: uppercase;
-    color: white;
+    color: $mainWhite;
     text-shadow: 2px 2px 2px black;
     font-family: 'Hammersmith One', sans-serif;
 }
@@ -32,7 +32,7 @@ h2 {
 }
 
 .line {
-    background-color: white;
+    background-color: $mainWhite;
     height: 8px;
     width: 40vw;
     margin-bottom: 2rem;
@@ -50,7 +50,7 @@ h2 {
 .header-btn:hover,
 .header-btn:focus {
     background-color: $mainGreen;
-    color: white;
+    color: $mainWhite;
     border: solid 2px $mainGreen;
 }
 

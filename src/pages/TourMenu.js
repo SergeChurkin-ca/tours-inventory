@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 import firebase from "../firebase";
 import Categories from "../components/CategoriesDropdown";
 import TourItems from "../components/TourItems";
@@ -6,6 +7,7 @@ import TourItems from "../components/TourItems";
 const TourMenu = () => {
   const [tours, setTours] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   const filterItemsCat = (category, filterParam) => {
     if (category && category !== "all") {
@@ -19,7 +21,8 @@ const TourMenu = () => {
     setTours(categories.filter((item) => item.date === filterParam));
   };
 
-  useEffect(() => {
+  const fetchTours = async () => {
+    setLoading(true)
     const dbRef = firebase.database().ref();
 
     dbRef.on("value", (snapshot) => {
@@ -33,30 +36,44 @@ const TourMenu = () => {
           category: data[inventoryName].category,
           seats: data[inventoryName].seats,
           date: data[inventoryName].date,
+          description: data[inventoryName].description,
+          imgUrl: "https://source.unsplash.com/350x350/?" + data[inventoryName].name,
         };
         newToursArray.push(toursObject);
+        setLoading(false)
       }
       setTours(newToursArray);
       setCategories(newToursArray);
     });
-  }, []);
+  };
 
+ useEffect(() => {
+    fetchTours()
+  }, [])
+
+     if(loading) {
+     return (
+     <main>
+      <Loading />
+     </main>
+     )
+     }
+  
   return (
-    <div>
-      <h1>Hello from tour menu </h1>
-      
+    <div className="wrapper">
+     
+
       <Categories
         categories={categories}
         filterItemsCat={filterItemsCat}
         filterItemsDate={filterItemsDate}
       />
+    <div className="tour-output-list">
+      
+        <TourItems filterredTours={tours} />
+    </div>
 
-      <TourItems filterredTours={tours} />
-
-      <h2>
-        {tours.length === 0 &&
-          "please hold on... "}
-      </h2>
+      <h2>{tours.length === 0 && "please hold on... "}</h2>
     </div>
   );
 };

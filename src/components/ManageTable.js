@@ -37,7 +37,6 @@ class App extends Component {
       <div className="tour-booking-list">
         <NewTourForm addTour={this.addTour} />
         <TourMenu />
-        <h1>check component</h1>
       </div>
     );
   }

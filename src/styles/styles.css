@@ -75,7 +75,7 @@ select {
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #ccc5c5;
+  background-color: #e9dede;
   width: 100%;
 }
 
@@ -98,7 +98,7 @@ body {
 header {
   padding: 5rem;
   text-transform: uppercase;
-  color: white;
+  color: #fff8f8;
   text-shadow: 2px 2px 2px black;
   font-family: 'Hammersmith One', sans-serif;
 }
@@ -113,7 +113,7 @@ h2 {
 }
 
 .line {
-  background-color: white;
+  background-color: #fff8f8;
   height: 8px;
   width: 40vw;
   margin-bottom: 2rem;
@@ -131,7 +131,7 @@ h2 {
 .header-btn:hover,
 .header-btn:focus {
   background-color: #008037;
-  color: white;
+  color: #fff8f8;
   border: solid 2px #008037;
 }
 
@@ -341,10 +341,124 @@ li a {
   }
 }
 
+.loading {
+  justify-content: center;
+  margin: 20% auto 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spinner,
+.loading h4 {
+  margin: 0 auto;
+}
+
+.spinner {
+  width: 10rem;
+  height: auto;
+}
+
+.loading h4 {
+  font-size: 20px;
+}
+
+.tour-output-list {
+  margin: 5em auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  padding: 1rem;
+  justify-content: center;
+  border: sold 3px red;
+  text-transform: uppercase;
+}
+
+.tour-item {
+  border: solid 2px grey;
+  margin: 1rem;
+  flex: 0 1 400px;
+  position: relative;
+}
+
+.tour-item p {
+  padding: 1rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  border-bottom: solid 2px grey;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #008037;
+  color: #412b04;
+  position: relative;
+  line-height: 4rem;
+}
+
+.img-container {
+  background: url("../images/spinner.gif") no-repeat center;
+  object-fit: contain;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tour-img {
+  width: 100%;
+}
+
+.tour-description {
+  z-index: -1;
+  background-color: #fff8f8;
+  position: absolute;
+  top: 14.6rem;
+  width: 100%;
+  height: calc(100% - 14.6rem);
+  opacity: 0;
+  text-transform: none;
+}
+
+.tour-item:hover .tour-description {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  transition: ease-in 0.3s;
+  opacity: 0.7;
+}
+
+@media (max-width: 780px) {
+  .tour-output-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 350px) {
+  .tour-output-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  h3 {
+    position: relative;
+    left: -10%;
+    margin: 0;
+    padding: 0;
+  }
+  .header-tour {
+    padding: 1em 0;
+  }
+  h5 {
+    top: -0.5em;
+  }
+}
+
 footer {
   position: fixed;
   bottom: 0;
-  background-color: #363636;
+  background-color: #232322;
   width: 100vw;
   text-align: center;
   padding: 0.3rem;

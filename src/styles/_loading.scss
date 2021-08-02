@@ -1,0 +1,20 @@
+.loading {
+    justify-content: center;
+    margin: 20% auto 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.spinner,
+.loading h4 {
+    margin: 0 auto;
+}
+
+.spinner {
+    width: 10rem;
+    height: auto;
+}
+
+.loading h4 {
+    font-size: 20px;
+}
