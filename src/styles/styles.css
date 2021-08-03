@@ -305,7 +305,7 @@ h2 {
 
 .header-btn {
   margin-top: 2rem;
-  padding: 0.5rem 7rem;
+  padding: 0.8rem 7rem;
   border: none;
   border-radius: 20px;
   text-transform: uppercase;
@@ -514,7 +514,6 @@ option {
   flex-wrap: wrap;
   padding: 0 1.5rem;
   justify-content: space-evenly;
-  border: sold 3px red;
   text-transform: uppercase;
 }
 
@@ -616,6 +615,143 @@ h3 {
   h5 {
     top: -0.5em;
   }
+}
+
+.inputformWrapper {
+  display: flex;
+  background-color: #e9dede;
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  right: 0;
+  width: 80vw;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.inputformWrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputParamsWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+.noteInput,
+.descriptionInput {
+  line-height: 1.5em;
+  margin: 1em 0;
+  padding: 1rem;
+}
+
+.inputParamsWrapper button,
+.inputParamsWrapper select {
+  border: solid 2px #e9dede;
+}
+
+.noteInput,
+.descriptionInput {
+  border-radius: 10px;
+}
+
+.noteButton,
+.input-form-select,
+.inputParamsWrapper input {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 1rem 1em;
+  margin: 0.5rem 0;
+  font-family: "Droid Sans", sans-serif;
+  background-color: #019875;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.inputParamsWrapper input {
+  background-color: rgba(34, 49, 63, 0.8);
+  border-radius: 0;
+  order: 1;
+}
+
+.input-form-select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  order: 1;
+}
+
+.noteButton:hover {
+  background-color: #02ba85;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.noteButton {
+  padding: 1rem 3rem;
+  order: 3;
+}
+
+.noteInput,
+.dateInput,
+.descriptionInput {
+  font-family: "Droid Sans", sans-serif;
+  background-color: rgba(34, 49, 63, 0.8);
+  color: #fff;
+  transition: 0.2s all 0.2s linear;
+}
+
+input:focus {
+  background-color: #e4f1fe;
+  color: #111;
+  transition: 0.2s ease-in;
+}
+
+@media (max-width: 900px) {
+  .inputParamsWrapper input {
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 20% 0.8rem;
+  }
+  .inputParamsWrapper button,
+  .inputParamsWrapper select {
+    border: solid 2px #e9dede;
+  }
+}
+
+@media (max-width: 1100px) {
+  .input-form-select {
+    order: 3;
+  }
+}
+
+@media (max-width: 517px) {
+  .inputParamsWrapper button,
+  .inputParamsWrapper select {
+    border-radius: 10px;
+  }
+}
+
+.authorize {
+  position: absolute;
+  top: 8rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: lowercase;
+  border: solid 2px lightgray;
+  border-radius: 8px;
+}
+
+.authorize input {
+  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 footer {

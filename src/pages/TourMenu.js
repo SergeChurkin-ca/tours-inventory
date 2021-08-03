@@ -70,7 +70,7 @@ const TourMenu = () => {
           filterItemsDate={filterItemsDate}
         />
         <div className="tour-output-container">
-          <h2>{tours.length === 0 && "please hold on... nothing found for this day "}</h2>
+          <h4>{tours.length === 0 && "please hold on... nothing found for this day "}</h4>
           <TourItems filterredTours={tours} />
         </div>
       </div>

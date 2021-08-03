@@ -11,13 +11,15 @@ const NewTourForm = () => {
   const [tourDate, setTourDate] = useState();
   const [tourDuration, setTourDuration] = useState();
   const [tourSeats, setTourSeats] = useState();
-  const [tourDescription, setTourDescription] = useState(
-    "lorem ipsum doler summit"
-  );
+  const [tourDescription, setTourDescription] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    database.push().set({
+    console.log(tourName === undefined);
+    if (tourName === undefined) {
+      alert('check')
+    } else {
+ database.push().set({
       name: tourName,
       category: tourCategory,
       date: tourDate,
@@ -25,7 +27,10 @@ const NewTourForm = () => {
       seats: tourSeats,
       description: tourDescription,
     });
+    }
+   
   };
+
   return (
     <div className="inputformWrapper">
       <form
@@ -43,16 +48,29 @@ const NewTourForm = () => {
           maxLength="20"
           // required
         />
-        <label for="categories">Choose tour type</label>
-        <select onChange={(e) => setTourCategory(e.target.value)}>
-          <option value="">-- tour type --</option>
-          <option value="land">land</option>
-          <option value="water">water</option>
-          <option value="culinary">culinary</option>
-          <option value="historical">historical</option>
-          <option value="air">air</option>
-        </select>
+        <input
+          type="text"
+          className="descriptionInput"
+          placeholder="Add tour description"
+          name="tourDescription"
+          value={tourDescription}
+          onChange={(e) => setTourDescription(e.target.value)}
+          maxLength="60"
+          // required
+        />
+
         <div className="inputParamsWrapper">
+          <select
+            className="input-form-select"
+            onChange={(e) => setTourCategory(e.target.value)}
+          >
+            <option value="">-- select category --</option>
+            <option value="land">land</option>
+            <option value="water">water</option>
+            <option value="culinary">culinary</option>
+            <option value="historical">historical</option>
+            <option value="air">air</option>
+          </select>
           <input
             type="date"
             // disabling past dates from global variable - today
@@ -81,15 +99,7 @@ const NewTourForm = () => {
             onChange={(e) => setTourSeats(e.target.value)}
             // required
           />
-          <input
-            type="text"
-            className="descriptionInput"
-            placeholder="tour description is here"
-            name="tourDescription"
-            value={tourDescription}
-            onChange={(e) => setTourDescription(e.target.value)}
-            // required
-          />
+
           <button type="submit" className="noteButton">
             Add
           </button>
