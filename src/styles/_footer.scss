@@ -1,15 +1,14 @@
 footer {
-    position: fixed;
-    bottom: 0;
     background-color: $mailAsphalt;
-    width: 100vw;
     text-align: center;
-    padding: 0.3rem;
+    padding: 0.1rem;
     font-size: 12px;
+    height: 7vh;
+    margin-top: -5vh;
 }
 
 footer a {
-    color: whitesmoke;
+    color: $mainWhite;
 }
 
 footer ul {
@@ -18,15 +17,14 @@ footer ul {
 
 footer li {
     display: inline;
-    padding: 1em;
 }
 
 .trademark {
-    margin-top: 1.5em;
-    font-size: 0.5em;
-    color: whitesmoke;
+    margin-top: 1em;
+    font-size: 1em;
+    color: $mainWhite;
 }
 
 footer a:hover {
-    color: black;
+    color: $mainGreen;
 }

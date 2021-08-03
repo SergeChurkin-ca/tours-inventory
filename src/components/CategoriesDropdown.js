@@ -5,7 +5,7 @@ function Categories({ categories, filterItemsCat, filterItemsDate }) {
 
   return (
     <div className="categories-container wrapper">
-      <div className="btn-container">
+      <div className="calendar-container">
         <form className="calendar">
           <label>select tour date</label>
           <input

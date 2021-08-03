@@ -69,11 +69,10 @@ const TourMenu = () => {
           filterItemsCat={filterItemsCat}
           filterItemsDate={filterItemsDate}
         />
-        <div className="tour-output-list">
+        <div className="tour-output-container">
+          <h2>{tours.length === 0 && "please hold on... nothing found for this day "}</h2>
           <TourItems filterredTours={tours} />
         </div>
-
-        <h2>{tours.length === 0 && "please hold on... nothing found for this day "}</h2>
       </div>
       <Footer />
     </>

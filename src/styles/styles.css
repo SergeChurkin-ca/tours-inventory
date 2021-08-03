@@ -1,76 +1,266 @@
-/* Box sizing rules */
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+body {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
+article,
+aside,
+footer,
+header,
+nav,
+section {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
 button,
-textarea,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
 select {
+  text-transform: none;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
   font: inherit;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+details,
+menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
@@ -87,12 +277,6 @@ body {
   background-image: url("../assets/pexels-rachel-claire-4992673.jpg");
   background-size: cover;
   height: 90vh;
-  z-index: 1;
-}
-
-.home {
-  overflow: hidden;
-  margin: 0 auto;
 }
 
 header {
@@ -151,80 +335,6 @@ h2 {
   }
   .header-btn {
     padding: 0.5rem 1rem;
-  }
-}
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
@@ -364,10 +474,10 @@ li a {
 
 .categories-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 5rem;
-  gap: 15rem;
-  box-shadow: 3px 3px 3px #e9dede;
+  margin-top: 3rem;
+  gap: 5rem;
 }
 
 .categories-container label,
@@ -383,10 +493,7 @@ li a {
   border-radius: 8px;
   display: flex;
   align-content: center;
-}
-
-.options-container select {
-  margin: 0 auto;
+  border: solid 2px grey;
 }
 
 option {
@@ -395,15 +502,26 @@ option {
   font-weight: 700;
 }
 
+.tour-output-container {
+  padding-bottom: 3rem;
+  position: relative;
+  min-height: 100vh;
+}
+
 .tour-output-list {
-  margin: 5em auto;
+  margin: 1rem auto;
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem auto;
-  padding: 1rem;
-  justify-content: center;
+  padding: 0 1.5rem;
+  justify-content: space-evenly;
   border: sold 3px red;
   text-transform: uppercase;
+}
+
+.tour-output-list h2 {
+  text-align: center;
+  margin: 2rem auto;
+  width: 80vw;
 }
 
 .tour-item {
@@ -449,9 +567,9 @@ h3 {
   z-index: -1;
   background-color: #fff8f8;
   position: absolute;
-  top: 14.6rem;
+  top: 17.6rem;
   width: 100%;
-  height: calc(100% - 14.6rem);
+  height: calc(100% - 17.6rem);
   opacity: 0;
   text-transform: none;
 }
@@ -466,11 +584,15 @@ h3 {
 
 @media (max-width: 780px) {
   .tour-output-list .tour-item {
-    flex: 0 1 200px;
+    flex: 0 1 300px;
   }
   .tour-output-list .img-container {
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 20rem;
+  }
+  .tour-output-list .tour-description {
+    top: 17.5rem;
+    height: calc(100% - 17.5rem);
   }
 }
 
@@ -497,17 +619,16 @@ h3 {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
   background-color: #232322;
-  width: 100vw;
   text-align: center;
-  padding: 0.3rem;
+  padding: 0.1rem;
   font-size: 12px;
+  height: 7vh;
+  margin-top: -5vh;
 }
 
 footer a {
-  color: whitesmoke;
+  color: #fff8f8;
 }
 
 footer ul {
@@ -516,15 +637,14 @@ footer ul {
 
 footer li {
   display: inline;
-  padding: 1em;
 }
 
 .trademark {
-  margin-top: 1.5em;
-  font-size: 0.5em;
-  color: whitesmoke;
+  margin-top: 1em;
+  font-size: 1em;
+  color: #fff8f8;
 }
 
 footer a:hover {
-  color: black;
+  color: #008037;
 }

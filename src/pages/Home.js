@@ -14,11 +14,8 @@ export default function Home() {
                         <button className="header-btn">find out</button>
                         </a>
                 </header>
-               
             </main>
-           
             <Footer />
-            
         </div>
     )
 }

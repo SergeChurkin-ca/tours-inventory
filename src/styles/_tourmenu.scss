@@ -1,12 +1,23 @@
+.tour-output-container {
+    padding-bottom: 3rem;
+    position: relative;
+    min-height: 100vh;
+}
+
 .tour-output-list {
-    margin: 5em auto;
+    margin: 1rem auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem auto;
-    padding: 1rem;
-    justify-content: center;
+    padding: 0 1.5rem;
+    justify-content: space-evenly;
     border: sold 3px red;
     text-transform: uppercase;
+}
+
+.tour-output-list h2 {
+    text-align: center;
+    margin: 2rem auto;
+    width: 80vw;
 }
 
 .tour-item {
@@ -52,9 +63,9 @@ h3 {
     z-index: -1;
     background-color: $mainWhite;
     position: absolute;
-    top: 14.6rem;
+    top: 17.6rem;
     width: 100%;
-    height: calc(100% - 14.6rem);
+    height: calc(100% - 17.6rem);
     opacity: 0;
     text-transform: none;
 }
@@ -70,11 +81,15 @@ h3 {
 @media (max-width: 780px) {
     .tour-output-list {
         .tour-item {
-            flex: 0 1 200px;
+            flex: 0 1 300px;
         }
         .img-container {
-            width: 15rem;
-            height: 15rem;
+            width: 20rem;
+            height: 20rem;
+        }
+        .tour-description {
+            top: 17.5rem;
+            height: calc(100% - 17.5rem);
         }
     }
 }
