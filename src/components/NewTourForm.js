@@ -6,27 +6,35 @@ const today = new Date().toISOString().split("T")[0];
 const NewTourForm = () => {
   const database = firebase.database().ref();
 
-  const [tourName, setTourName] = useState();
-  const [tourCategory, setTourCategory] = useState();
-  const [tourDate, setTourDate] = useState();
-  const [tourDuration, setTourDuration] = useState();
-  const [tourSeats, setTourSeats] = useState();
-  const [tourDescription, setTourDescription] = useState();
+  const [tourName, setTourName] = useState([]);
+  const [tourCategory, setTourCategory] = useState([]);
+  const [tourDate, setTourDate] = useState([]);
+  const [tourDuration, setTourDuration] = useState([]);
+  const [tourSeats, setTourSeats] = useState([]);
+  const [tourDescription, setTourDescription] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(tourName === undefined);
-    if (tourName === undefined) {
-      alert('check')
+    console.log(tourName.length === 0);
+    if (tourName.length === 0) {
+      alert("all fields are required");
     } else {
- database.push().set({
-      name: tourName,
-      category: tourCategory,
-      date: tourDate,
-      duration: tourDuration,
-      seats: tourSeats,
-      description: tourDescription,
-    });
+      database.push().set({
+        name: tourName,
+        category: tourCategory,
+        date: tourDate,
+        duration: tourDuration,
+        seats: tourSeats,
+        description: tourDescription,
+      });
+      alert("submitted!");
+       setTourName('')
+    setTourCategory('')
+    setTourDate('')
+    setTourDuration([])
+    setTourSeats('')
+      setTourDescription('')
+      console.log(tourName)
     }
    
   };
