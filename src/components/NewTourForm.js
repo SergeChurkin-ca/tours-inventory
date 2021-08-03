@@ -16,7 +16,7 @@ const NewTourForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(tourName.length === 0);
-    if (tourName.length === 0) {
+    if (tourName.length === 0 || tourCategory.length === 0 || tourDate.length === 0 || tourSeats.length === 0 || tourDescription.length === 0 || tourDuration.length === 0) {
       alert("all fields are required");
     } else {
       database.push().set({
