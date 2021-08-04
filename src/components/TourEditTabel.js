@@ -48,56 +48,54 @@ const TourEditTable = () => {
     <div className="tour-edit-table">
       <div className="table-header">
         <h4>Tour Inventory Editor</h4>
-              <h4>Total tours: {tours.length}</h4>
-              <ul className="table-params">
-                  <li>edit</li>
-                  <li>name</li>
-                  <li>category</li>
-                  <li>date</li>
-                  <li>duration</li>
-                  <li>seats</li>
-              </ul>
+        <h4>Total tours: {tours.length}</h4>
+        <ul className="table-params">
+          <li>edit</li>
+          <li>name</li>
+          <li>category</li>
+          <li>date</li>
+          <li>duration</li>
+          <li>seats</li>
+        </ul>
       </div>
       {tours
         .sort((a, b) => a.date < b.date)
         .map((x) => {
           return (
-           
-              <ul className="table-vals">
-                <li key={x.id}>
-                  <p>
-                    <button onClick={() => handleRemoveTour(x.id)}>
-                      <i class="fas fa-backspace"> </i>
-                    </button>
-                  </p>
-                  <p>
-                    {x.name}
-                    <button onClick={() => this.handleEditTourName(x.id)}>
-                      <i class="fas fa-pen"> </i>
-                    </button>
-                  </p>
-                  <p> {x.category}</p>
-                  <p>
-                    {x.date}
-                    <button onClick={() => this.handleEditTourDate(x.id)}>
-                      <i class="fas fa-pen"> </i>
-                    </button>
-                  </p>
-                  <p>
-                    {x.duration}
-                    <button onClick={() => this.handleEditTourDuration(x.id)}>
-                      <i class="fas fa-pen"> </i>
-                    </button>
-                  </p>
-                  <p>
-                    {" "}
-                    {x.seats}
-                    <button onClick={() => this.handleEditTourSeats(x.id)}>
-                      <i class="fas fa-pen"> </i>
-                    </button>
-                  </p>
-                </li>
-              </ul>
+            <ul className="table-vals">
+              <li key={x.id}>
+                <p>
+                  <button onClick={() => handleRemoveTour(x.id)}>
+                    <i class="fas fa-backspace"> </i>
+                  </button>
+                </p>
+                <p>
+                  <button onClick={() => this.handleEditTourName(x.id)}>
+                    <i class="fas fa-pen"> </i>
+                  </button>
+                  {x.name}
+                </p>
+                <p> {x.category}</p>
+                <p>
+                  <button onClick={() => this.handleEditTourDate(x.id)}>
+                    <i class="fas fa-pen"> </i>
+                  </button>
+                  {x.date}
+                </p>
+                <p>
+                  <button onClick={() => this.handleEditTourDuration(x.id)}>
+                    <i class="fas fa-pen"> </i>
+                  </button>
+                  {x.duration}
+                </p>
+                <p>
+                  <button onClick={() => this.handleEditTourSeats(x.id)}>
+                    <i class="fas fa-pen"> </i>
+                  </button>
+                  {x.seats}
+                </p>
+              </li>
+            </ul>
           );
         })}
     </div>

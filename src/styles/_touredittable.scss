@@ -8,10 +8,6 @@
     border-radius: 10px;
 }
 
-.tour-edit-table h4 {
-    line-height: 2rem;
-}
-
 .tour-edit-table .table-header {
     text-align: center;
     background-color: #019875;
@@ -27,6 +23,11 @@
     align-items: center;
 }
 
+.table-vals {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
 .table-header,
 .tour-edit-table ul li {
     justify-content: space-evenly;
@@ -37,10 +38,10 @@
     line-height: 1rem;
     padding: 0.1rem;
     margin: 1rem auto;
+    text-align: center;
 }
 
 .tour-edit-table button {
-    // float: left;
     margin: -0.3rem 0.2rem;
 }
 
@@ -48,27 +49,30 @@
 .tour-edit-table li p:nth-child(1),
 .table-header ul li:nth-child(1n+5),
 .table-header ul li:nth-child(1) {
-    width: 4vw;
+    width: 3vw;
 }
 
 .tour-edit-table p:nth-child(2),
 .table-header ul li:nth-child(2) {
     width: 15vw;
+    text-align: left;
+    // border: solid 2px red;
 }
 
 .table-header ul li:nth-child(2) {
-    padding-right: 9vw;
+    padding-right: 8vw;
 }
 
 .tour-edit-table p:nth-child(3),
 .table-header ul li:nth-child(3) {
-    width: 15vw;
-    text-align: center;
+    width: 5vw;
+    // border: solid 2px red;
 }
 
 .tour-edit-table p:nth-child(4),
 .table-header ul li:nth-child(4) {
-    width: 8vw;
+    width: 7vw;
+    padding: 0;
 }
 
 .tour-edit-table ul li,
@@ -90,7 +94,7 @@
 }
 
 button i {
-    font-size: 1vw;
+    font-size: 1.3em;
 }
 
 button i:hover {
@@ -102,16 +106,26 @@ button i:hover {
     .tour-edit-table {
         width: 50vw;
     }
-    .tour-edit-table p:nth-child(2),
-    .table-header ul li:nth-child(2) {
-        width: 15%;
+    .table-header ul li:nth-child(2),
+    .table-vals p:nth-child(2) {
         white-space: nowrap;
+        // border: solid 2px red;
+        width: 7vw;
+        padding: 0;
+    }
+    .table-header ul li:nth-child(3),
+    .table-vals p:nth-child(3) {
+        white-space: nowrap;
+        // border: solid 2px red;
+        width: 15vw;
+        padding: 0 1rem;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
     .tour-edit-table {
-        // top: 40rem;
+        width: 80vw;
+        font-size: 12px;
     }
 }
 
