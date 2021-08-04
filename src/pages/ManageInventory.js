@@ -27,12 +27,11 @@ const ManageInventory = () => {
   );
 
   return (
-    <div>
-      <h3>
+    <>
         {authorize || login}
-        {authorize && <ManageTable />}
-      </h3>
-    </div>
+        {authorize && <ManageTable /> }
+      
+    </>
   );
 };
 

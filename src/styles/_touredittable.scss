@@ -1,0 +1,122 @@
+.tour-edit-table {
+    margin: 1rem auto;
+    padding-bottom: 2rem;
+    width: 60vw;
+    background-color: #C5CACF;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.tour-edit-table h4 {
+    line-height: 2rem;
+}
+
+.tour-edit-table .table-header {
+    text-align: center;
+    background-color: #019875;
+    color: $mainWhite;
+    border: solid 1px #019875;
+    margin-bottom: 2rem;
+}
+
+.table-header ul,
+.table-vals {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.table-header,
+.tour-edit-table ul li {
+    justify-content: space-evenly;
+}
+
+.tour-edit-table ul p,
+.table-header ul li {
+    line-height: 1rem;
+    padding: 0.1rem;
+    margin: 1rem auto;
+}
+
+.tour-edit-table button {
+    // float: left;
+    margin: -0.3rem 0.2rem;
+}
+
+.tour-edit-table li p:nth-child(1n+5),
+.tour-edit-table li p:nth-child(1),
+.table-header ul li:nth-child(1n+5),
+.table-header ul li:nth-child(1) {
+    width: 4vw;
+}
+
+.tour-edit-table p:nth-child(2),
+.table-header ul li:nth-child(2) {
+    width: 15vw;
+}
+
+.table-header ul li:nth-child(2) {
+    padding-right: 9vw;
+}
+
+.tour-edit-table p:nth-child(3),
+.table-header ul li:nth-child(3) {
+    width: 15vw;
+    text-align: center;
+}
+
+.tour-edit-table p:nth-child(4),
+.table-header ul li:nth-child(4) {
+    width: 8vw;
+}
+
+.tour-edit-table ul li,
+.table-header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.table-vals li:hover,
+.tour-edit-table li:hover button {
+    background-color: rgb(108, 171, 192);
+    color: #fff;
+}
+
+.tour-edit-table button {
+    border: 0;
+    color: rgb(228, 88, 37);
+    background: none;
+}
+
+button i {
+    font-size: 1vw;
+}
+
+button i:hover {
+    transform: scale(1.2);
+    color: brown;
+}
+
+@media (min-width: 1800px) {
+    .tour-edit-table {
+        width: 50vw;
+    }
+    .tour-edit-table p:nth-child(2),
+    .table-header ul li:nth-child(2) {
+        width: 15%;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 900px) {
+    .tour-edit-table {
+        // top: 40rem;
+    }
+}
+
+@media (max-width: 517px) {
+    .tour-edit-table {
+        // top: 42rem;
+    }
+}

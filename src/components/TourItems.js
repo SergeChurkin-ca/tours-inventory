@@ -1,7 +1,6 @@
 import React from "react";
 
 function TourItems({ filterredTours }) {
- 
   return (
     <div className="tour-output-list">
       {filterredTours
@@ -13,12 +12,16 @@ function TourItems({ filterredTours }) {
               <p>category: {x.category}</p>
               <p>date: {x.date}</p>
               <p>seats: {x.seats}</p>
-             <div className="img-container">
-                <img className="tour-img" src={x.imgUrl} alt="tour placeholder image" />
+              <div className="img-container">
+                <img
+                  className="tour-img"
+                  src={x.imgUrl}
+                  alt="tour placeholder image"
+                />
               </div>
               <div className="tour-description">
                 <p>{x.description}</p>
-                </div>
+              </div>
             </div>
           );
         })}

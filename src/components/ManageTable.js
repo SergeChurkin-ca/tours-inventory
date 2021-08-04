@@ -1,8 +1,8 @@
 import React from "react";
 // import firebase  from "firebase";
 import NewTourForm from "./NewTourForm.js";
-import TourMenu from "../pages/TourMenu.js";
-
+// import TourMenu from "../pages/TourMenu.js";
+import TourEditTable from "./TourEditTabel.js";
 
 const ManageTable = () => {
  
@@ -11,8 +11,7 @@ const ManageTable = () => {
     return (
       <div className="tour-booking-list">
         <NewTourForm />
-        {/* <TourMenu /> */}
-    
+       <TourEditTable />
       </div>
     );
   // }

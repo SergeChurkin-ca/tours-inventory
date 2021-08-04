@@ -8,9 +8,15 @@
     text-transform: lowercase;
     border: solid 2px lightgray;
     border-radius: 8px;
+    background-color: #C5CACF;
 }
 
 .authorize input {
     padding: 0 1rem;
     margin: 0 1rem;
+}
+
+.tour-booking-list {
+    height: 100vh;
+    width: 100vw;
 }
