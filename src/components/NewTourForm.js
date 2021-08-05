@@ -12,6 +12,7 @@ const NewTourForm = () => {
   const [tourDuration, setTourDuration] = useState([]);
   const [tourSeats, setTourSeats] = useState([]);
   const [tourDescription, setTourDescription] = useState([]);
+  const [dropwDownSelect, setDropDownSelect] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,7 +77,7 @@ const NewTourForm = () => {
         <div className="inputParamsWrapper">
           <select
             className="input-form-select"
-            onChange={(e) => setTourCategory(e.target.value)}
+            onChange={(e) => setTourCategory(e.target.value)} value={tourCategory}
           >
             <option value="">-- select category --</option>
             <option value="land">land</option>
@@ -114,7 +115,7 @@ const NewTourForm = () => {
             // required
           />
 
-          <button type="submit" className="noteButton">
+          <button type="submit" onChange={() => setTourCategory(null)} className="noteButton">
             Add
           </button>
         </div>
