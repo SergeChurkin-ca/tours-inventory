@@ -728,28 +728,54 @@ input:focus {
 }
 
 @media (max-width: 517px) {
+  .inputformWrapper {
+    font-size: 12px;
+    margin: 1rem auto;
+  }
+  .inputParamsWrapper {
+    margin: 0.5rem auto;
+  }
   .inputParamsWrapper button,
-  .inputParamsWrapper select {
+  .input-form-select {
     border-radius: 10px;
+    padding: 0.5rem;
+  }
+  .noteInput,
+  .descriptionInput,
+  .inputParamsWrapper input {
+    padding: 0.5rem;
+  }
+  .inputParamsWrapper input:nth-child(1n+3) {
+    width: 25vw;
+    margin: 0 auto;
   }
 }
 
 .authorize {
-  position: absolute;
-  top: 8rem;
-  margin: 1rem;
+  margin: 5rem auto;
   display: flex;
+  width: 50vw;
+  padding: 1rem;
   flex-direction: column;
   align-items: center;
   text-transform: lowercase;
   border: solid 2px lightgray;
   border-radius: 8px;
   background-color: #C5CACF;
+  text-align: center;
 }
 
-.authorize input {
-  padding: 0 1rem;
-  margin: 0 1rem;
+.authorize form {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.authorize form input {
+  width: 7rem;
 }
 
 .tour-booking-list {
@@ -760,7 +786,7 @@ input:focus {
 .tour-edit-table {
   margin: 1rem auto;
   padding-bottom: 2rem;
-  width: 60vw;
+  width: 80vw;
   background-color: #C5CACF;
   text-transform: uppercase;
   padding: 1rem;
@@ -795,7 +821,6 @@ input:focus {
 .tour-edit-table ul p,
 .table-header ul li {
   line-height: 1rem;
-  padding: 0.1rem;
   margin: 1rem auto;
   text-align: center;
 }
@@ -804,11 +829,11 @@ input:focus {
   margin: -0.3rem 0.2rem;
 }
 
-.tour-edit-table li p:nth-child(1n+5),
 .tour-edit-table li p:nth-child(1),
-.table-header ul li:nth-child(1n+5),
+.tour-edit-table li p:nth-child(1),
+.table-header ul li:nth-child(1),
 .table-header ul li:nth-child(1) {
-  width: 3vw;
+  width: 1vw;
 }
 
 .tour-edit-table p:nth-child(2),
@@ -823,12 +848,18 @@ input:focus {
 
 .tour-edit-table p:nth-child(3),
 .table-header ul li:nth-child(3) {
-  width: 5vw;
+  width: 3vw;
 }
 
 .tour-edit-table p:nth-child(4),
 .table-header ul li:nth-child(4) {
   width: 7vw;
+  padding: 0;
+}
+
+.tour-edit-table p:nth-child(5),
+.table-header ul li:nth-child(5) {
+  width: 3vw;
   padding: 0;
 }
 
@@ -859,19 +890,17 @@ button i:hover {
   color: brown;
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1300px) {
   .tour-edit-table {
-    width: 50vw;
+    width: 70vw;
   }
   .table-header ul li:nth-child(2),
   .table-vals p:nth-child(2) {
-    white-space: nowrap;
     width: 7vw;
     padding: 0;
   }
   .table-header ul li:nth-child(3),
   .table-vals p:nth-child(3) {
-    white-space: nowrap;
     width: 15vw;
     padding: 0 1rem;
   }
@@ -881,6 +910,43 @@ button i:hover {
   .tour-edit-table {
     width: 80vw;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .table-header ul,
+  .tour-edit-table p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 620px) {
+  .tour-edit-table {
+    padding: 7px;
+  }
+  .table-vals li p {
+    margin: 0 0.3rem;
+    width: 1rem;
+  }
+  .tour-edit-table .table-header ul,
+  .tour-edit-table:nth-child(2) > ul li {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    grid-row-gap: 10px;
+    margin: 0.5rem auto;
+    padding: 10px;
+    box-shadow: 1px 1px 7px 1px grey;
+    border: 2px solid #979494;
+  }
+  .tour-edit-table .table-header ul {
+    display: none;
+  }
+}
+
+@media (max-width: 372px) {
+  .tour-edit-table:nth-child(2) > ul li {
+    display: flex;
+    flex-direction: column;
   }
 }
 

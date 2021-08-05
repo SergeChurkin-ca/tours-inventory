@@ -1,7 +1,7 @@
 .tour-edit-table {
     margin: 1rem auto;
     padding-bottom: 2rem;
-    width: 60vw;
+    width: 80vw;
     background-color: #C5CACF;
     text-transform: uppercase;
     padding: 1rem;
@@ -36,7 +36,6 @@
 .tour-edit-table ul p,
 .table-header ul li {
     line-height: 1rem;
-    padding: 0.1rem;
     margin: 1rem auto;
     text-align: center;
 }
@@ -45,18 +44,17 @@
     margin: -0.3rem 0.2rem;
 }
 
-.tour-edit-table li p:nth-child(1n+5),
 .tour-edit-table li p:nth-child(1),
-.table-header ul li:nth-child(1n+5),
+.tour-edit-table li p:nth-child(1),
+.table-header ul li:nth-child(1),
 .table-header ul li:nth-child(1) {
-    width: 3vw;
+    width: 1vw;
 }
 
 .tour-edit-table p:nth-child(2),
 .table-header ul li:nth-child(2) {
     width: 15vw;
     text-align: left;
-    // border: solid 2px red;
 }
 
 .table-header ul li:nth-child(2) {
@@ -65,13 +63,18 @@
 
 .tour-edit-table p:nth-child(3),
 .table-header ul li:nth-child(3) {
-    width: 5vw;
-    // border: solid 2px red;
+    width: 3vw;
 }
 
 .tour-edit-table p:nth-child(4),
 .table-header ul li:nth-child(4) {
     width: 7vw;
+    padding: 0;
+}
+
+.tour-edit-table p:nth-child(5),
+.table-header ul li:nth-child(5) {
+    width: 3vw;
     padding: 0;
 }
 
@@ -102,21 +105,17 @@ button i:hover {
     color: brown;
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1300px) {
     .tour-edit-table {
-        width: 50vw;
+        width: 70vw;
     }
     .table-header ul li:nth-child(2),
     .table-vals p:nth-child(2) {
-        white-space: nowrap;
-        // border: solid 2px red;
         width: 7vw;
         padding: 0;
     }
     .table-header ul li:nth-child(3),
     .table-vals p:nth-child(3) {
-        white-space: nowrap;
-        // border: solid 2px red;
         width: 15vw;
         padding: 0 1rem;
     }
@@ -129,8 +128,39 @@ button i:hover {
     }
 }
 
-@media (max-width: 517px) {
+@media (max-width: 900px) {
+    .table-header ul,
+    .tour-edit-table p {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 620px) {
     .tour-edit-table {
-        // top: 42rem;
+        padding: 7px;
+    }
+    .table-vals li p {
+        margin: 0 0.3rem;
+        width: 1rem;
+    }
+    .tour-edit-table .table-header ul,
+    .tour-edit-table:nth-child(2)>ul li {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+        grid-row-gap: 10px;
+        margin: 0.5rem auto;
+        padding: 10px;
+        box-shadow: 1px 1px 7px 1px grey;
+        border: 2px solid #979494;
+    }
+    .tour-edit-table .table-header ul {
+        display: none;
+    }
+}
+
+@media (max-width: 372px) {
+    .tour-edit-table:nth-child(2)>ul li {
+        display: flex;
+        flex-direction: column;
     }
 }

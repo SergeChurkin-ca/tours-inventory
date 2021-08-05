@@ -86,13 +86,13 @@ const TourEditTable = () => {
                   <button onClick={() => this.handleEditTourDuration(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
-                  {x.duration}
+                  {x.duration} hrs
                 </p>
                 <p>
                   <button onClick={() => this.handleEditTourSeats(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
-                  {x.seats}
+                  {x.seats} pax
                 </p>
               </li>
             </ul>

@@ -1,15 +1,10 @@
 .inputformWrapper {
     display: flex;
     background-color: $mainGrey;
-    // position: absolute;
-    // top: 5rem;
-    // left: 0;
-    // right: 0;
     width: 80vw;
     margin: 0 auto;
     justify-content: center;
     margin: 3rem auto 2rem;
-    // border: solid 5px green;
 }
 
 .inputformWrapper form {
@@ -114,8 +109,25 @@ input:focus {
 }
 
 @media (max-width: 517px) {
+    .inputformWrapper {
+        font-size: 12px;
+        margin: 1rem auto;
+    }
+    .inputParamsWrapper {
+        margin: 0.5rem auto;
+    }
     .inputParamsWrapper button,
-    .inputParamsWrapper select {
+    .input-form-select {
         border-radius: 10px;
+        padding: 0.5rem;
+    }
+    .noteInput,
+    .descriptionInput,
+    .inputParamsWrapper input {
+        padding: 0.5rem;
+    }
+    .inputParamsWrapper input:nth-child(1n+3) {
+        width: 25vw;
+        margin: 0 auto;
     }
 }
