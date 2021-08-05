@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import firebase from "firebase";
+
 const dbRef = firebase.database().ref();
 const TourEditTable = () => {
   const [tours, setTours] = useState([]);
@@ -58,6 +59,7 @@ const TourEditTable = () => {
           <li>seats</li>
         </ul>
       </div>
+
       {tours
         .sort((a, b) => a.date < b.date)
         .map((x) => {
@@ -98,7 +100,7 @@ const TourEditTable = () => {
             </ul>
           );
         })}
-    </div>
+      </div>
   );
 };
 

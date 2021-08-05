@@ -16,25 +16,24 @@ const ManageInventory = () => {
   };
 
   const login = (
-    <div className="authorize">
-      <h4>please login to proceed</h4>
-      <p>(password hint this time: 'admin')</p>
-      <form action="#" onSubmit={authorization}>
-        <input type="password" placeholder="Password" />
-        <input type="submit" value="login" />
-      </form>
+    <div className="authorize-wrapper">
+      <div className="authorize">
+        <h4>please login to proceed</h4>
+        <p>(password hint this time: 'admin')</p>
+        <form action="#" onSubmit={authorization}>
+          <input type="password" placeholder="Password" />
+          <input type="submit" value="login" />
+        </form>
+      </div>
     </div>
   );
 
   return (
     <>
-        {authorize || login}
-        {authorize && <ManageTable /> }
-      
+      {authorize || login}
+      {authorize && <ManageTable />}
     </>
   );
 };
 
 export default ManageInventory;
-
-// has to rename into auth from anageinventory

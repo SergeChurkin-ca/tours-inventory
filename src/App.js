@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 
 import Error from "./pages/Error";
 import Home from "./pages/Home";
@@ -8,6 +8,7 @@ import ManageInventory from "./pages/ManageInventory";
 
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/manageinventory" component={ManageInventory} />
         <Route component={Error} />
       </Switch>
+      <Footer />
     </>
   );
 }

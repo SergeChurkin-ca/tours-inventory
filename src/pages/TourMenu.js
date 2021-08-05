@@ -3,7 +3,6 @@ import Loading from "../components/Loading";
 import firebase from "../firebase";
 import Categories from "../components/CategoriesDropdown";
 import TourItems from "../components/TourItems";
-import Footer from "../components/Footer";
 
 const TourMenu = () => {
   const [tours, setTours] = useState([]);
@@ -70,11 +69,13 @@ const TourMenu = () => {
           filterItemsDate={filterItemsDate}
         />
         <div className="tour-output-container">
-          <h4>{tours.length === 0 && "please hold on... nothing found for this day "}</h4>
+          <h4>
+            {tours.length === 0 &&
+              "please hold on... nothing found for this day "}
+          </h4>
           <TourItems filterredTours={tours} />
         </div>
       </div>
-      <Footer />
     </>
   );
 };
