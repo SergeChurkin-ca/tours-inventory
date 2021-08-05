@@ -41,10 +41,107 @@ const TourEditTable = () => {
     );
   }
 
+  // ********** EDIT / REMOVE TOURS ****************
   const handleRemoveTour = (id) => {
     dbRef.child(id).remove();
   };
+  // tour name prompt
+  const handleEditTourName = (id) => {
+    function requiredFunc() {
+      let newUserValue = prompt("Edit Tour Name");
+      if (!newUserValue) {
+        alert("can't be blank");
+        requiredFunc();
+      } else {
+        dbRef.child(id).update({
+          name: newUserValue,
+        });
+      }
+    }
+    requiredFunc();
+  };
 
+  // tour date prompt and format validation
+  const handleEditTourDate = (id) => {
+    let today = new Date();
+    const dateFormateRegex =
+      /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$/;
+    // date format is year-month-day
+
+    const todayIs = new Date().toISOString().split("T")[0];
+    let year = today.getFullYear();
+    function requiredFunc() {
+      let newUserValue = prompt(
+        "Edit tour date: year-month-day",
+        year + "-0" + [today.getMonth() + 1] + "-0" + today.getDate()
+      );
+      if (!newUserValue) {
+        alert("check your input\n\ncan't be blank");
+        requiredFunc();
+      } else if (newUserValue < todayIs) {
+        alert(
+          "invalid date\n\ncan't chose past date\n\nconsider format: year-month-day\n\ne.g. 2021-01-01"
+        );
+
+        requiredFunc();
+      } else if (
+        newUserValue.slice(0, 4) < year ||
+        newUserValue.slice(0, 4) > year + 1
+      ) {
+        alert("invalid year\n\nplease chose something realistic ;)");
+        console.log(dateFormateRegex.test(newUserValue));
+
+        requiredFunc();
+      } else if (
+        newUserValue.slice(4, 5) !== "-" ||
+        newUserValue.slice(7, 8) !== "-" ||
+        dateFormateRegex.test(newUserValue) === false
+      ) {
+        alert(
+          "invalid format/date\n\nconsider format: year-month-day\n\ne.g. 2021-01-01"
+        );
+
+        requiredFunc();
+      } else {
+        dbRef.child(id).update({
+          date: newUserValue,
+        });
+      }
+    }
+    requiredFunc();
+  };
+
+  // tour duration prompt
+  const handleEditTourDuration = (id) => {
+    function requiredFunc() {
+      let newUserValue = prompt("Edit Tour Duraiton - hours");
+      if (!newUserValue) {
+        alert("can't be blank");
+        requiredFunc();
+      } else {
+        dbRef.child(id).update({
+          duration: newUserValue,
+        });
+      }
+    }
+    requiredFunc();
+  };
+  // tour seats propmpt
+  const handleEditTourSeats = (id) => {
+    function requiredFunc() {
+      let newUserValue = prompt("Edit Tour Seats");
+      if (!newUserValue) {
+        alert("can't be blank");
+        requiredFunc();
+      } else {
+        dbRef.child(id).update({
+          seats: newUserValue,
+        });
+      }
+    }
+    requiredFunc();
+  };
+  // ********** TOUR MANAGER TABLE ****************
   return (
     <div className="tour-edit-table">
       <div className="table-header">
@@ -72,26 +169,26 @@ const TourEditTable = () => {
                   </button>
                 </p>
                 <p>
-                  <button onClick={() => this.handleEditTourName(x.id)}>
+                  <button onClick={() => handleEditTourName(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
                   {x.name}
                 </p>
                 <p> {x.category}</p>
                 <p>
-                  <button onClick={() => this.handleEditTourDate(x.id)}>
+                  <button onClick={() => handleEditTourDate(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
                   {x.date}
                 </p>
                 <p>
-                  <button onClick={() => this.handleEditTourDuration(x.id)}>
+                  <button onClick={() => handleEditTourDuration(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
                   {x.duration} hrs
                 </p>
                 <p>
-                  <button onClick={() => this.handleEditTourSeats(x.id)}>
+                  <button onClick={() => handleEditTourSeats(x.id)}>
                     <i class="fas fa-pen"> </i>
                   </button>
                   {x.seats} pax
@@ -100,7 +197,7 @@ const TourEditTable = () => {
             </ul>
           );
         })}
-      </div>
+    </div>
   );
 };
 
