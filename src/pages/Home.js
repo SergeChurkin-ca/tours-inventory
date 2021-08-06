@@ -3,6 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div className="home">
+      
       <main className="main wrapper">
         <header>
           <h1>tourbees</h1>
@@ -13,6 +14,7 @@ export default function Home() {
           </a>
         </header>
       </main>
+
     </div>
   );
 }
