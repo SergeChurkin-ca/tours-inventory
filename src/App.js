@@ -14,7 +14,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     
-      <Router basename={process.env.PUBLIC_URL}>
+      <>
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -23,8 +23,8 @@ function App() {
           <Route component={Error} />
         </Switch>
         <Footer />
-      </Router>
-    
+
+    </>
   );
 }
 
