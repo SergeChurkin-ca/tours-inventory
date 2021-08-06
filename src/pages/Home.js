@@ -8,7 +8,7 @@ export default function Home() {
           <h1>tourbees</h1>
           <div className="line"></div>
           <h2>your exclusive tour partner</h2>
-          <a href="/tourmenu">
+          <a href="/https://sergechurkin-ca.github.io/tours-inventory/tourmenu">
             <button className="header-btn">find out</button>
           </a>
         </header>
