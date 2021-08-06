@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/tours-inventory/static/css/main.6836ee83.chunk.css",
+    "main.js": "/tours-inventory/static/js/main.c8b77be2.chunk.js",
+    "main.js.map": "/tours-inventory/static/js/main.c8b77be2.chunk.js.map",
+    "runtime-main.js": "/tours-inventory/static/js/runtime-main.e1a98c6f.js",
+    "runtime-main.js.map": "/tours-inventory/static/js/runtime-main.e1a98c6f.js.map",
+    "static/js/2.62d950fe.chunk.js": "/tours-inventory/static/js/2.62d950fe.chunk.js",
+    "static/js/2.62d950fe.chunk.js.map": "/tours-inventory/static/js/2.62d950fe.chunk.js.map",
+    "static/js/3.a449c15f.chunk.js": "/tours-inventory/static/js/3.a449c15f.chunk.js",
+    "static/js/3.a449c15f.chunk.js.map": "/tours-inventory/static/js/3.a449c15f.chunk.js.map",
+    "index.html": "/tours-inventory/index.html",
+    "static/css/main.6836ee83.chunk.css.map": "/tours-inventory/static/css/main.6836ee83.chunk.css.map",
+    "static/js/2.62d950fe.chunk.js.LICENSE.txt": "/tours-inventory/static/js/2.62d950fe.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/tours-inventory/static/media/spinner.1e6c7ff9.gif",
+    "static/media/tourbeeslogo.8c45e0fb.svg": "/tours-inventory/static/media/tourbeeslogo.8c45e0fb.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e1a98c6f.js",
+    "static/js/2.62d950fe.chunk.js",
+    "static/css/main.6836ee83.chunk.css",
+    "static/js/main.c8b77be2.chunk.js"
+  ]
+}
