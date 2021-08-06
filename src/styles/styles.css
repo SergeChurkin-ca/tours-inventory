@@ -366,7 +366,7 @@ li a {
   visibility: hidden;
   position: absolute;
   right: 1rem;
-  top: 1.5rem;
+  top: 1.3rem;
   font-size: 25px;
   z-index: 1;
 }
@@ -459,9 +459,9 @@ h2 {
 
 .loading {
   justify-content: center;
-  margin: 20% auto 25%;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .spinner,
@@ -488,7 +488,7 @@ h2 {
 
 .categories-container label,
 .categories-container span {
-  margin: 1rem 2rem;
+  margin: 0.8rem 2rem;
   text-transform: uppercase;
 }
 
@@ -498,8 +498,17 @@ h2 {
   color: #fff8f8;
   border-radius: 8px;
   display: flex;
-  align-content: center;
   border: solid 2px grey;
+  height: 50px;
+}
+
+.calendar label,
+.calendar input,
+.options-container span,
+.options-container select {
+  width: 12rem;
+  text-align: center;
+  justify-content: center;
 }
 
 option {
@@ -508,10 +517,28 @@ option {
   font-weight: 700;
 }
 
+@media (max-width: 480px) {
+  .calendar label,
+  .calendar input,
+  .options-container span,
+  .options-container select {
+    width: 9rem;
+    text-align: center;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .categories-container label,
+  .categories-container span {
+    margin: 1rem 0rem;
+  }
+}
+
 .tour-output-container {
   padding-bottom: 3rem;
   position: relative;
   min-height: 100vh;
+  width: 90vw;
+  margin: 2rem auto;
 }
 
 .tour-output-list {
@@ -523,42 +550,36 @@ option {
   text-transform: uppercase;
 }
 
-.tour-output-list h2 {
-  text-align: center;
-  margin: 2rem auto;
-  width: 80vw;
-}
-
 .tour-item {
   border: solid 2px grey;
-  margin: 1rem;
-  flex: 0 1 400px;
+  margin: 3.5rem 1.5rem;
+  flex: 0 1 320px;
   position: relative;
+  box-shadow: 3px 4px 14px gray;
 }
 
 .tour-item p {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 h3 {
   text-transform: uppercase;
   border-bottom: solid 2px grey;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin: auto;
   background-color: #008037;
   color: #412b04;
   position: relative;
   line-height: 4rem;
+  width: 100%;
 }
 
 .img-container {
   background: url("../images/spinner.gif") no-repeat center;
+  background-size: 5rem;
   padding: 0 auto;
-  width: 25rem;
-  height: 25rem;
-  object-fit: contain;
-  position: relative;
+  width: 20rem;
+  height: 20rem;
   display: flex;
   margin: 0 auto;
   text-align: center;
@@ -572,9 +593,9 @@ h3 {
   z-index: -1;
   background-color: #fff8f8;
   position: absolute;
-  top: 17.6rem;
+  top: 11.5rem;
   width: 100%;
-  height: calc(100% - 17.6rem);
+  height: calc(100% - 11.5rem);
   opacity: 0;
   text-transform: none;
 }
@@ -585,41 +606,37 @@ h3 {
   position: absolute;
   transition: ease-in 0.3s;
   opacity: 0.7;
+  background-color: #e9dede;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 768px) {
   .tour-output-list .tour-item {
-    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
   }
   .tour-output-list .img-container {
-    width: 20rem;
-    height: 20rem;
+    margin-left: 0;
   }
   .tour-output-list .tour-description {
-    top: 17.5rem;
-    height: calc(100% - 17.5rem);
+    height: auto;
+    opacity: 1;
+    position: unset;
+    display: flex;
+    padding: 0.5rem;
+  }
+  .tour-output-list .tour-item:hover .tour-description {
+    position: unset;
+    opacity: 1;
   }
 }
 
 @media (max-width: 350px) {
-  .tour-output-list {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    align-content: center;
+  .img-container {
+    width: 14.5rem;
+    height: 14.5rem;
   }
-  h3 {
-    position: relative;
-    margin: 0;
+  .tour-description {
     padding: 0;
-  }
-  .header-tour {
-    padding: 1em 0;
-  }
-  h5 {
-    top: -0.5em;
   }
 }
 
@@ -992,4 +1009,20 @@ footer li {
 
 footer a:hover {
   color: #008037;
+}
+
+.error-wrapper {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.error-wrapper h3 {
+  margin-top: 5rem;
+  width: 50vw;
+  background-color: #e9dede;
+  border: none;
+}
+
+.error-wrapper a:hover {
+  color: red;
 }

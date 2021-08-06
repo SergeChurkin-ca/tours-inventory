@@ -12,7 +12,6 @@ const NewTourForm = () => {
   const [tourDuration, setTourDuration] = useState([]);
   const [tourSeats, setTourSeats] = useState([]);
   const [tourDescription, setTourDescription] = useState([]);
-  const [dropwDownSelect, setDropDownSelect] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();

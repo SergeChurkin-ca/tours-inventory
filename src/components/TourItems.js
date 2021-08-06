@@ -16,7 +16,7 @@ function TourItems({ filterredTours }) {
                 <img
                   className="tour-img"
                   src={x.imgUrl}
-                  alt="tour placeholder image"
+                  alt="placeholder img"
                 />
               </div>
               <div className="tour-description">
