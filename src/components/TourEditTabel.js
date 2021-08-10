@@ -73,7 +73,7 @@ const TourEditTable = () => {
     function requiredFunc() {
       let newUserValue = prompt(
         "Edit tour date: year-month-day",
-        year + "-0" + [today.getMonth() + 1] + "-0" + today.getDate()
+        year + "-0" + [today.getMonth() + 1] + "-" + today.getDate()
       );
       if (!newUserValue) {
         alert("check your input\n\ncan't be blank");
