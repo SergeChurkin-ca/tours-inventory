@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <ul class="social">
+      <ul className="social">
         <li>
           <a
             className="tw-ic mr-3 "
@@ -11,7 +11,7 @@ const Footer = () => {
             href="https://twitter.com/ChurkinSerge"
             target="blank"
           >
-            <i class="fab fa-lg fa-twitter "></i>
+            <i className="fab fa-lg fa-twitter "></i>
           </a>
         </li>
 
@@ -22,7 +22,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/sergechurkin/"
             target="blank"
           >
-            <i class="fab fa-lg fa-linkedin-in "></i>
+            <i className="fab fa-lg fa-linkedin-in "></i>
           </a>
         </li>
 
@@ -33,7 +33,7 @@ const Footer = () => {
             href="https://github.com/sergechurkin-ca"
             target="blank"
           >
-            <i class="fab fa-lg fa-github "></i>
+            <i className="fab fa-lg fa-github "></i>
           </a>
         </li>
 
@@ -47,7 +47,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p class="trademark ">2020 created by serge churkin <a href="https://serge-web.com">    www.serge-web.com</a>
+      <p className="trademark ">2020 created by serge churkin <a href="https://serge-web.com">    www.serge-web.com</a>
     </p>
     </footer>
   );

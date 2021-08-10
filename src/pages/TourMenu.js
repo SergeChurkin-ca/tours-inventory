@@ -9,14 +9,13 @@ const TourMenu = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const filterItemsCat = (category, filterParam) => {
+  const filterItemsCat = (category) => {
     if (category && category !== "all") {
       setTours(categories.filter((x) => x.category === category));
     } else {
       setTours(categories);
     }
   };
-
   const filterItemsDate = (filterParam) => {
     setTours(categories.filter((item) => item.date === filterParam));
   };

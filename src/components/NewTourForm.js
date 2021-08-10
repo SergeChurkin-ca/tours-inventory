@@ -78,12 +78,12 @@ const NewTourForm = () => {
             className="input-form-select"
             onChange={(e) => setTourCategory(e.target.value)} value={tourCategory}
           >
-            <option value="">-- select category --</option>
-            <option value="land">land</option>
-            <option value="water">water</option>
-            <option value="culinary">culinary</option>
-            <option value="historical">historical</option>
-            <option value="air">air</option>
+            <option key={ tourCategory} value="">-- select category --</option>
+            <option  key={ tourCategory} value="land">land</option>
+            <option key={ tourCategory} value="water">water</option>
+            <option  key={ tourCategory} value="culinary">culinary</option>
+            <option  key={ tourCategory} value="historical">historical</option>
+            <option  key={ tourCategory} value="air">air</option>
           </select>
           <input
             type="date"

@@ -165,31 +165,31 @@ const TourEditTable = () => {
               <li key={x.id}>
                 <p>
                   <button onClick={() => handleRemoveTour(x.id)}>
-                    <i class="fas fa-backspace"> </i>
+                    <i className="fas fa-backspace"> </i>
                   </button>
                 </p>
                 <p>
                   <button onClick={() => handleEditTourName(x.id)}>
-                    <i class="fas fa-pen"> </i>
+                    <i className="fas fa-pen"> </i>
                   </button>
                   {x.name}
                 </p>
                 <p> {x.category}</p>
                 <p>
                   <button onClick={() => handleEditTourDate(x.id)}>
-                    <i class="fas fa-pen"> </i>
+                    <i className="fas fa-pen"> </i>
                   </button>
                   {x.date}
                 </p>
                 <p>
                   <button onClick={() => handleEditTourDuration(x.id)}>
-                    <i class="fas fa-pen"> </i>
+                    <i className="fas fa-pen"> </i>
                   </button>
                   {x.duration} hrs
                 </p>
                 <p>
                   <button onClick={() => handleEditTourSeats(x.id)}>
-                    <i class="fas fa-pen"> </i>
+                    <i className="fas fa-pen"> </i>
                   </button>
                   {x.seats} pax
                 </p>

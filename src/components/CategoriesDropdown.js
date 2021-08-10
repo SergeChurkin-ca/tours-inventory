@@ -20,8 +20,8 @@ function Categories({  filterItemsCat, filterItemsDate }) {
           />
         </form>
       </div>
+
       <div className="options-container">
-        
         <span>select by category</span>
         <select onChange={(e) => filterItemsCat(e.target.value)}>
           <option value="">--Choose category--</option>
