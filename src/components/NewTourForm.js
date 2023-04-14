@@ -76,14 +76,27 @@ const NewTourForm = () => {
         <div className="inputParamsWrapper">
           <select
             className="input-form-select"
-            onChange={(e) => setTourCategory(e.target.value)} value={tourCategory}
+            onChange={(e) => setTourCategory(e.target.value)}
+            value={tourCategory}
           >
-            <option key={ tourCategory} value="">-- select category --</option>
-            <option  key={ tourCategory} value="land">land</option>
-            <option key={ tourCategory} value="water">water</option>
-            <option  key={ tourCategory} value="culinary">culinary</option>
-            <option  key={ tourCategory} value="historical">historical</option>
-            <option  key={ tourCategory} value="air">air</option>
+            <option key={tourCategory} value="">
+              -- select category --
+            </option>
+            <option key={tourCategory} value="land">
+              land
+            </option>
+            <option key={tourCategory} value="water">
+              water
+            </option>
+            <option key={tourCategory} value="culinary">
+              culinary
+            </option>
+            <option key={tourCategory} value="historical">
+              historical
+            </option>
+            <option key={tourCategory} value="air">
+              air
+            </option>
           </select>
           <input
             type="date"
@@ -114,7 +127,11 @@ const NewTourForm = () => {
             // required
           />
 
-          <button type="submit" onChange={() => setTourCategory(null)} className="noteButton">
+          <button
+            type="submit"
+            onChange={() => setTourCategory(null)}
+            className="noteButton"
+          >
             Add
           </button>
         </div>

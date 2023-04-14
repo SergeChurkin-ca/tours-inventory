@@ -161,7 +161,7 @@ const TourEditTable = () => {
         .sort((a, b) => a.date < b.date)
         .map((x) => {
           return (
-            <ul className="table-vals">
+            <ul key="tabb" className="table-vals">
               <li key={x.id}>
                 <p>
                   <button onClick={() => handleRemoveTour(x.id)}>

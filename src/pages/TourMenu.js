@@ -8,16 +8,27 @@ const TourMenu = () => {
   const [tours, setTours] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [dates, setDates] = useState([])
+  
+  // filter by categories
   const filterItemsCat = (category) => {
     if (category && category !== "all") {
       setTours(categories.filter((x) => x.category === category));
     } else {
       setTours(categories);
+      
     }
   };
-  const filterItemsDate = (filterParam) => {
-    setTours(categories.filter((item) => item.date === filterParam));
+  // filter by date
+  // const filterItemsDate = (filterParam) => {
+  //   setTours(categories.filter((item) => item.date === filterParam));
+  // };
+  const filterItemsDate = (date) => {
+    if (date && date !== "all") {
+      setTours(dates.filter((x) => x.date === date));
+    } else {
+      setTours(categories);
+    }
   };
 
   const fetchTours = async () => {
@@ -44,6 +55,7 @@ const TourMenu = () => {
       }
       setTours(newToursArray);
       setCategories(newToursArray);
+      setDates(newToursArray)
     });
   };
 
@@ -63,9 +75,10 @@ const TourMenu = () => {
     <>
       <div className="wrapper">
         <Categories
-          categories={categories}
+          // categories={categories}
           filterItemsCat={filterItemsCat}
           filterItemsDate={filterItemsDate}
+          tours={tours}
         />
         <div className="tour-output-container">
           <h4>

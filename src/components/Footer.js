@@ -4,16 +4,6 @@ const Footer = () => {
   return (
     <footer>
       <ul className="social">
-        <li>
-          <a
-            className="tw-ic mr-3 "
-            role="button"
-            href="https://twitter.com/ChurkinSerge"
-            target="blank"
-          >
-            <i className="fab fa-lg fa-twitter "></i>
-          </a>
-        </li>
 
         <li>
           <a
