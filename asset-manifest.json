@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/tours-inventory/static/css/main.6836ee83.chunk.css",
-    "main.js": "/tours-inventory/static/js/main.cbd0b240.chunk.js",
-    "main.js.map": "/tours-inventory/static/js/main.cbd0b240.chunk.js.map",
-    "runtime-main.js": "/tours-inventory/static/js/runtime-main.e1a98c6f.js",
-    "runtime-main.js.map": "/tours-inventory/static/js/runtime-main.e1a98c6f.js.map",
-    "static/js/2.a81567f7.chunk.js": "/tours-inventory/static/js/2.a81567f7.chunk.js",
-    "static/js/2.a81567f7.chunk.js.map": "/tours-inventory/static/js/2.a81567f7.chunk.js.map",
-    "static/js/3.a449c15f.chunk.js": "/tours-inventory/static/js/3.a449c15f.chunk.js",
-    "static/js/3.a449c15f.chunk.js.map": "/tours-inventory/static/js/3.a449c15f.chunk.js.map",
+    "main.js": "/tours-inventory/static/js/main.bbc3b386.chunk.js",
+    "main.js.map": "/tours-inventory/static/js/main.bbc3b386.chunk.js.map",
+    "runtime-main.js": "/tours-inventory/static/js/runtime-main.6d5d0bbb.js",
+    "runtime-main.js.map": "/tours-inventory/static/js/runtime-main.6d5d0bbb.js.map",
+    "static/js/2.675739ab.chunk.js": "/tours-inventory/static/js/2.675739ab.chunk.js",
+    "static/js/2.675739ab.chunk.js.map": "/tours-inventory/static/js/2.675739ab.chunk.js.map",
+    "static/js/3.c9d9666d.chunk.js": "/tours-inventory/static/js/3.c9d9666d.chunk.js",
+    "static/js/3.c9d9666d.chunk.js.map": "/tours-inventory/static/js/3.c9d9666d.chunk.js.map",
     "index.html": "/tours-inventory/index.html",
     "static/css/main.6836ee83.chunk.css.map": "/tours-inventory/static/css/main.6836ee83.chunk.css.map",
-    "static/js/2.a81567f7.chunk.js.LICENSE.txt": "/tours-inventory/static/js/2.a81567f7.chunk.js.LICENSE.txt",
+    "static/js/2.675739ab.chunk.js.LICENSE.txt": "/tours-inventory/static/js/2.675739ab.chunk.js.LICENSE.txt",
     "static/media/App.css": "/tours-inventory/static/media/spinner.1e6c7ff9.gif",
     "static/media/tourbeeslogo.8c45e0fb.svg": "/tours-inventory/static/media/tourbeeslogo.8c45e0fb.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e1a98c6f.js",
-    "static/js/2.a81567f7.chunk.js",
+    "static/js/runtime-main.6d5d0bbb.js",
+    "static/js/2.675739ab.chunk.js",
     "static/css/main.6836ee83.chunk.css",
-    "static/js/main.cbd0b240.chunk.js"
+    "static/js/main.bbc3b386.chunk.js"
   ]
 }
