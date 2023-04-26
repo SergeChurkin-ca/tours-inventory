@@ -23,6 +23,9 @@ const TourEditTable = () => {
           duration: data[inventoryName].duration,
         };
         newToursArray.push(toursObject);
+        newToursArray.sort((a, b) => {
+          return new Date(a.date) - new Date(b.date);
+        });
         setLoading(false);
       }
       setTours(newToursArray);

@@ -4,7 +4,7 @@ function TourItems({ filterredTours }) {
   return (
     <div className="tour-output-list">
       {filterredTours
-        .sort((a, b) => a.date < b.date)
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
         .map((x) => {
           return (
             <div key={x.id} className="tour-item">
