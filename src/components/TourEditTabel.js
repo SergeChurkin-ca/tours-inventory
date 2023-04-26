@@ -67,31 +67,50 @@ const TourEditTable = () => {
     const dateFormateRegex =
       /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$/;
     // date format is year-month-day
-
+  
     const todayIs = new Date().toISOString().split("T")[0];
     let year = today.getFullYear();
-    function requiredFunc() {
-      let newUserValue = prompt(
-        "Edit tour date: year-month-day",
-        year + "-0" + [today.getMonth() + 1] + "-" + today.getDate()
-      );
+  
+    const input = document.createElement("input");
+    input.type = "date";
+    input.min = todayIs;
+    input.value = year + "-0" + [today.getMonth() + 1] + "-" + today.getDate();
+  
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Confirm";
+  
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+  
+    const div = document.createElement("div");
+    div.setAttribute("class", "overlay-container");
+    const span = document.createElement("span");
+    span.innerHTML = 'New Tour Date';
+    div.appendChild(span);
+    div.appendChild(input);
+    div.appendChild(confirmButton);
+    div.appendChild(cancelButton);
+  
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.appendChild(div);
+  
+    document.body.appendChild(overlay);
+  
+    confirmButton.addEventListener("click", () => {
+      const newUserValue = input.value;
       if (!newUserValue) {
         alert("check your input\n\ncan't be blank");
-        requiredFunc();
       } else if (newUserValue < todayIs) {
         alert(
           "invalid date\n\ncan't chose past date\n\nconsider format: year-month-day\n\ne.g. 2021-01-01"
         );
-
-        requiredFunc();
       } else if (
         newUserValue.slice(0, 4) < year ||
         newUserValue.slice(0, 4) > year + 1
       ) {
         alert("invalid year\n\nplease chose something realistic ;)");
         console.log(dateFormateRegex.test(newUserValue));
-
-        requiredFunc();
       } else if (
         newUserValue.slice(4, 5) !== "-" ||
         newUserValue.slice(7, 8) !== "-" ||
@@ -100,16 +119,19 @@ const TourEditTable = () => {
         alert(
           "invalid format/date\n\nconsider format: year-month-day\n\ne.g. 2021-01-01"
         );
-
-        requiredFunc();
       } else {
         dbRef.child(id).update({
           date: newUserValue,
         });
+        document.body.removeChild(overlay);
       }
-    }
-    requiredFunc();
+    });
+  
+    cancelButton.addEventListener("click", () => {
+      document.body.removeChild(overlay);
+    });
   };
+  
 
   // tour duration prompt
   const handleEditTourDuration = (id) => {

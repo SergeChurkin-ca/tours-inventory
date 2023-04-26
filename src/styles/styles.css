@@ -923,6 +923,27 @@ button i:hover {
   color: brown;
 }
 
+.overlay {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.overlay-container span {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 1300px) {
   .tour-edit-table {
     width: 70vw;
