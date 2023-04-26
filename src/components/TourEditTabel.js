@@ -47,34 +47,68 @@ const TourEditTable = () => {
   };
   // tour name prompt
   const handleEditTourName = (id) => {
-    function requiredFunc() {
-      let newUserValue = prompt("Edit Tour Name");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+  
+    const div = document.createElement("div");
+    div.setAttribute("class", "overlay-container");
+  
+    const span = document.createElement("span");
+    span.innerHTML = 'Edit Tour Name';
+  
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Enter tour name";
+    input.style.width = '200px';
+  
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Confirm";
+  
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+  
+    div.appendChild(span);
+    div.appendChild(input);
+    div.appendChild(confirmButton);
+    div.appendChild(cancelButton);
+  
+    overlay.appendChild(div);
+    document.body.appendChild(overlay);
+  
+    confirmButton.addEventListener("click", () => {
+      const newUserValue = input.value.trim();
       if (!newUserValue) {
-        alert("can't be blank");
-        requiredFunc();
+        alert("Tour name can't be blank");
       } else {
         dbRef.child(id).update({
           name: newUserValue,
         });
+        document.body.removeChild(overlay);
       }
-    }
-    requiredFunc();
+    });
+  
+    cancelButton.addEventListener("click", () => {
+      document.body.removeChild(overlay);
+    });
   };
+  
 
   // tour date prompt and format validation
   const handleEditTourDate = (id) => {
-    let today = new Date();
+    let tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+  
     const dateFormateRegex =
       /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$/;
     // date format is year-month-day
   
-    const todayIs = new Date().toISOString().split("T")[0];
-    let year = today.getFullYear();
+    const tomorrowIs = tomorrow.toISOString().split("T")[0];
+    let year = tomorrow.getFullYear();
   
     const input = document.createElement("input");
     input.type = "date";
-    input.min = todayIs;
-    input.value = year + "-0" + [today.getMonth() + 1] + "-" + today.getDate();
+    input.min = tomorrowIs;
+    input.value = year + "-0" + [tomorrow.getMonth() + 1] + "-" + tomorrow.getDate();
   
     const confirmButton = document.createElement("button");
     confirmButton.textContent = "Confirm";
@@ -101,7 +135,7 @@ const TourEditTable = () => {
       const newUserValue = input.value;
       if (!newUserValue) {
         alert("check your input\n\ncan't be blank");
-      } else if (newUserValue < todayIs) {
+      } else if (newUserValue < tomorrowIs) {
         alert(
           "invalid date\n\ncan't chose past date\n\nconsider format: year-month-day\n\ne.g. 2021-01-01"
         );
@@ -132,37 +166,102 @@ const TourEditTable = () => {
     });
   };
   
-
+  
   // tour duration prompt
   const handleEditTourDuration = (id) => {
-    function requiredFunc() {
-      let newUserValue = prompt("Edit Tour Duraiton - hours");
+    const input = document.createElement("input");
+    input.type = "number";
+    input.min = 1;
+    input.max = 24;
+    input.placeholder = '1 hour'
+    
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Confirm";
+    
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+    
+    const div = document.createElement("div");
+    div.setAttribute("class", "overlay-container");
+    const span = document.createElement("span");
+    span.innerHTML = 'Edit Tour Duration (hours)';
+    div.appendChild(span);
+    div.appendChild(input);
+    div.appendChild(confirmButton);
+    div.appendChild(cancelButton);
+    
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.appendChild(div);
+    
+    document.body.appendChild(overlay);
+    
+    confirmButton.addEventListener("click", () => {
+      const newUserValue = input.value;
       if (!newUserValue) {
-        alert("can't be blank");
-        requiredFunc();
+        alert("check your input\n\ncan't be blank");
       } else {
         dbRef.child(id).update({
           duration: newUserValue,
         });
+        document.body.removeChild(overlay);
       }
-    }
-    requiredFunc();
+    });
+    
+    cancelButton.addEventListener("click", () => {
+      document.body.removeChild(overlay);
+    });
   };
+  
+  
   // tour seats propmpt
   const handleEditTourSeats = (id) => {
-    function requiredFunc() {
-      let newUserValue = prompt("Edit Tour Seats");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+  
+    const div = document.createElement("div");
+    div.setAttribute("class", "overlay-container");
+  
+    const span = document.createElement("span");
+    span.innerHTML = 'Edit Tour Seats';
+  
+    const input = document.createElement("input");
+    input.type = "number";
+    input.placeholder =  "seats";
+    input.min = 1;
+    input.style.width = '70px';
+  
+    const confirmButton = document.createElement("button");
+    confirmButton.textContent = "Confirm";
+  
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+  
+    div.appendChild(span);
+    div.appendChild(input);
+    div.appendChild(confirmButton);
+    div.appendChild(cancelButton);
+  
+    overlay.appendChild(div);
+    document.body.appendChild(overlay);
+  
+    confirmButton.addEventListener("click", () => {
+      const newUserValue = input.value;
       if (!newUserValue) {
         alert("can't be blank");
-        requiredFunc();
       } else {
         dbRef.child(id).update({
           seats: newUserValue,
         });
+        document.body.removeChild(overlay);
       }
-    }
-    requiredFunc();
+    });
+  
+    cancelButton.addEventListener("click", () => {
+      document.body.removeChild(overlay);
+    });
   };
+  
   // ********** TOUR MANAGER TABLE ****************
   return (
     <div className="tour-edit-table">

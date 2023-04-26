@@ -926,16 +926,24 @@ button i:hover {
 .overlay {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
 .overlay-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 40rem;
+  padding: 3rem;
+  margin: 0 auto;
+  background-color: #C5CACF;
 }
 
 .overlay-container span {
