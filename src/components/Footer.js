@@ -37,7 +37,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className="trademark ">2023 created by serge churkin <a href="https://serges.site">www.serges.site</a>
+      <p className="trademark ">&copy;2023 created by serge churkin <a href="https://serges.site">www.serges.site</a>
     </p>
     </footer>
   );
