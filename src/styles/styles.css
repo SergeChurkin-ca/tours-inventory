@@ -430,6 +430,7 @@ h2 {
   border-radius: 20px;
   text-transform: uppercase;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .header-btn:hover,
