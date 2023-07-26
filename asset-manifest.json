@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tours-inventory/static/css/main.547387f6.chunk.css",
-    "main.js": "/tours-inventory/static/js/main.bed6ed23.chunk.js",
-    "main.js.map": "/tours-inventory/static/js/main.bed6ed23.chunk.js.map",
+    "main.js": "/tours-inventory/static/js/main.6bacef1e.chunk.js",
+    "main.js.map": "/tours-inventory/static/js/main.6bacef1e.chunk.js.map",
     "runtime-main.js": "/tours-inventory/static/js/runtime-main.7a3ec216.js",
     "runtime-main.js.map": "/tours-inventory/static/js/runtime-main.7a3ec216.js.map",
     "static/js/2.4facc218.chunk.js": "/tours-inventory/static/js/2.4facc218.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.7a3ec216.js",
     "static/js/2.4facc218.chunk.js",
     "static/css/main.547387f6.chunk.css",
-    "static/js/main.bed6ed23.chunk.js"
+    "static/js/main.6bacef1e.chunk.js"
   ]
 }
