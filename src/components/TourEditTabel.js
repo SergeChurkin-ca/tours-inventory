@@ -271,56 +271,58 @@ const TourEditTable = () => {
       <div className="table-header">
         <h4>Tour Inventory Editor</h4>
         <h4>Total tours: {tours.length}</h4>
-        <ul className="table-params">
-          <li>edit</li>
-          <li>name</li>
-          <li>category</li>
-          <li>date</li>
-          <li>duration</li>
-          <li>seats</li>
-        </ul>
       </div>
 
-      {tours
-        .sort((a, b) => a.date < b.date)
-        .map((x) => {
-          return (
-            <ul key="tabb" className="table-vals">
-              <li key={x.id}>
-                <p>
-                  <button onClick={() => handleRemoveTour(x.id)}>
-                    <i className="fas fa-backspace"> </i>
-                  </button>
-                </p>
-                <p>
-                  <button onClick={() => handleEditTourName(x.id)}>
-                    <i className="fas fa-pen"> </i>
-                  </button>
-                  {x.name}
-                </p>
-                <p> {x.category}</p>
-                <p>
-                  <button onClick={() => handleEditTourDate(x.id)}>
-                    <i className="fas fa-pen"> </i>
-                  </button>
-                  {x.date}
-                </p>
-                <p>
-                  <button onClick={() => handleEditTourDuration(x.id)}>
-                    <i className="fas fa-pen"> </i>
-                  </button>
-                  {x.duration} hrs
-                </p>
-                <p>
-                  <button onClick={() => handleEditTourSeats(x.id)}>
-                    <i className="fas fa-pen"> </i>
-                  </button>
-                  {x.seats} pax
-                </p>
-              </li>
-            </ul>
-          );
-        })}
+      <div className="responsive-table">
+        <table>
+         <thead className="table-header">
+              <th>edit</th>
+              <th>name</th>
+              <th>category</th>
+              <th>date</th>
+              <th>duration</th>
+              <th>seats</th>
+            </thead>
+          <tbody>
+            {tours
+              .sort((a, b) => a.date < b.date)
+              .map((x) => (
+                <tr className="table-vals" key={x.id}>
+                  <td>
+                    <button onClick={() => handleRemoveTour(x.id)}>
+                      <i className="fas fa-backspace"></i>
+                    </button>
+                  </td>
+                  <td>
+                    <button onClick={() => handleEditTourName(x.id)}>
+                      <i className="fas fa-pen"></i>
+                    </button>
+                    {x.name}
+                  </td>
+                  <td>{x.category}</td>
+                  <td>
+                    <button onClick={() => handleEditTourDate(x.id)}>
+                      <i className="fas fa-pen"></i>
+                    </button>
+                    {x.date}
+                  </td>
+                  <td>
+                    <button onClick={() => handleEditTourDuration(x.id)}>
+                      <i className="fas fa-pen"></i>
+                    </button>
+                    {x.duration} hrs
+                  </td>
+                  <td>
+                    <button onClick={() => handleEditTourSeats(x.id)}>
+                      <i className="fas fa-pen"></i>
+                    </button>
+                    {x.seats} pax
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

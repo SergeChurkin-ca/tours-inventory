@@ -69,7 +69,7 @@ const NewTourForm = () => {
           name="tourDescription"
           value={tourDescription}
           onChange={(e) => setTourDescription(e.target.value)}
-          maxLength="60"
+          maxLength="160"
           // required
         />
 

@@ -19,9 +19,9 @@ const ManageInventory = () => {
     <div className="authorize-wrapper">
       <div className="authorize">
         <h4>please login to proceed</h4>
-        <p>(password hint this time: 'admin')</p>
+        <p>(password is open for now: 'admin')</p>
         <form action="#" onSubmit={authorization}>
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" value="admin"/>
           <input type="submit" value="login" />
         </form>
       </div>

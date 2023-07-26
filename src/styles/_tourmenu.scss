@@ -1,3 +1,14 @@
+.tour-item h3 {
+    font-family: 'Lato', sans-serif;
+    color: $mainBlack;
+    font-weight: 400;
+}
+
+.tour-item p {
+    font-family: 'Lato', Helvetica, sans-serif !important;
+    font-weight: 400;
+}
+
 .tour-output-container {
     padding-bottom: 3rem;
     position: relative;
@@ -13,30 +24,38 @@
     padding: 0 1.5rem;
     justify-content: space-evenly;
     text-transform: uppercase;
+    gap: 1rem 3rem;
 }
 
 .tour-item {
-    border: solid 2px grey;
+    border: solid 1px #948c8c;
     margin: 3.5rem 1.5rem;
     flex: 0 1 320px;
     position: relative;
     box-shadow: 3px 4px 14px gray;
+    background-color: $mainWhite;
 }
 
 .tour-item p {
     padding: 0 1rem;
 }
 
-h3 {
-    text-transform: uppercase;
-    border-bottom: solid 2px grey;
+.tour-item h4 {
+    text-transform: capitalize;
     text-align: center;
-    margin: auto;
+    margin: -1.5rem auto;
     background-color: $mainGreen;
-    color: rgb(65, 43, 4);
+    color: $mainWhite;
     position: relative;
-    line-height: 4rem;
-    width: 100%;
+    line-height: 2.5;
+    width: 90%;
+    font-size: 18px;
+}
+
+.tour-item h3 {
+    text-align: center;
+    font-weight: 700 !important;
+    margin: 3.5rem 0 2rem;
 }
 
 .img-container {
@@ -56,13 +75,20 @@ h3 {
 
 .tour-description {
     z-index: -1;
+    padding-top: 1rem;
     background-color: $mainWhite;
     position: absolute;
-    top: 11.5rem;
+    top: 0rem;
     width: 100%;
-    height: calc(100% - 11.5rem);
+    height: 100%;
     opacity: 0;
     text-transform: none;
+}
+
+.tour-description p {
+    font-size: 18px;
+    line-height: 1.75;
+    font-weight: 400;
 }
 
 .tour-item:hover .tour-description {
@@ -70,8 +96,8 @@ h3 {
     z-index: 1;
     position: absolute;
     transition: ease-in 0.3s;
-    opacity: 0.7;
-    background-color: $mainGrey;
+    opacity: 0.85;
+    background-color: $mainWhite;
 }
 
 @media (max-width: 768px) {

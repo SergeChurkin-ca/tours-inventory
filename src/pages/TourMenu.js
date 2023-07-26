@@ -20,9 +20,7 @@ const TourMenu = () => {
     }
   };
   // filter by date
-  // const filterItemsDate = (filterParam) => {
-  //   setTours(categories.filter((item) => item.date === filterParam));
-  // };
+  
   const filterItemsDate = (date) => {
     if (date && date !== "all") {
       setTours(dates.filter((x) => x.date === date));

@@ -6,6 +6,7 @@ const ManageTable = () => {
  
     return (
       <div className="tour-booking-list">
+        <h2>Inventory Control</h2>
         <NewTourForm />
         <TourEditTable />
       </div>

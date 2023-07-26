@@ -8,6 +8,9 @@ function Categories({ filterItemsCat, filterItemsDate, tours }) {
 
   return (
     <div className="categories-container wrapper">
+      <div className="headline-container">
+        <h2>Discover Available Tours</h2>
+      </div>
       <div className="calendar-container">
         <form className="calendar">
           <label>select by date</label>
