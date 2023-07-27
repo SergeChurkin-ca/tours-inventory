@@ -276,7 +276,7 @@ const TourEditTable = () => {
       <div className="responsive-table">
         <table>
          <thead className="table-header">
-              <th>edit</th>
+              <th>remove</th>
               <th>name</th>
               <th>category</th>
               <th>date</th>
