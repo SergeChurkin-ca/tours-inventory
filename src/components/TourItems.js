@@ -3,7 +3,7 @@ import React from "react";
 function formatDate(dateString) {
   const date = new Date(dateString);
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const day = date.getDate();
+  const day = date.getUTCDate();
   let daySuffix = "th";
 
   if (day === 1 || day === 21 || day === 31) {
@@ -14,7 +14,7 @@ function formatDate(dateString) {
     daySuffix = "rd";
   }
 
-  const formattedDate = `${monthNames[date.getMonth()]} ${day}${daySuffix}`;
+  const formattedDate = `${monthNames[date.getUTCMonth()]} ${day}${daySuffix}`;
   return formattedDate;
 }
 
